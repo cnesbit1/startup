@@ -1,1 +1,1 @@
-This won't be a conflict.
+This will be a conflict. Don't doubt me.
