@@ -1,7 +1,7 @@
 # My Startup Application
 
 ## Elevator Pitch
-*Imagine an app that simplifies [insert your app’s problem area] by providing real-time data, seamless user experience, and secure interaction, allowing users to [insert app’s benefit]. Whether you’re [target audience], this application aims to solve [the main problem], and deliver the best results efficiently.*
+*Introducing "IdeaHub"—a platform where individual creativity meets community collaboration. IdeaHub empowers users to submit their best ideas, websites, images, and more, while voting on others using various systems like ranked choice, majority rule, and approval voting. Explore how different voting methods influence outcomes and discover which ideas rise to the top based on collective preferences. Whether you're an entrepreneur, a student, or a researcher, IdeaHub provides a dynamic space to experience how the way we vote can shape the future of innovation, while also getting to enjoy that innovation.*
 
 ## Application Design
 *Include embedded images of your rough sketches here. These could be from a tool like NinjaMock or pictures of hand-drawn designs.*
