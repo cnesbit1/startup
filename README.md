@@ -4,7 +4,7 @@
 *Introducing "BallotBox Exchange"—a platform where individual creativity meets community collaboration. BallotBox Exchange empowers users to submit their best ideas, websites, text, and more, while voting on others using various systems like ranked choice, majority rule, and approval voting. Explore how different voting methods influence outcomes and discover which ideas rise to the top based on collective preferences. Whether you're an entrepreneur, a student, or a researcher, BallotBox Exchange provides a dynamic space to experience how the way we vote can shape the future of innovation, while also getting to enjoy that innovation.*
 
 ## Application Design
-![Login Page](https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-1170x780.jpg)
+![Login Page]()
 ![Voting Roster Page](https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-1170x780.jpg)
 ![User Profile Page/Submission Page](https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-1170x780.jpg)
 
