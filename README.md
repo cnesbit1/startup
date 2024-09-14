@@ -10,11 +10,11 @@ Example:
 
 
 ## Key Features
-- **Real-Time Interaction**: Leverages WebSockets for live data updates, keeping users informed instantly.
-- **Secure Authentication**: Provides robust user login and session management.
-- **Persistent Data Storage**: Stores user information and preferences using secure databases.
-- **External API Integration**: Utilizes [insert API] to enhance functionality and provide third-party services.
-- **Responsive Design**: A fluid UI built to look good on any device with tailored CSS and animations.
+- **Real-Time Voting Interaction**: Leverages WebSockets to provide real-time updates on voting results and idea rankings as users cast their votes. When a vote is submitted, all users instantly see the updated leaderboard, rankings, or score breakdown based on the active voting system. This creates a dynamic experience where users can watch ideas rise and fall in real-time.
+- **Robust Authentication & User Profiles**: Provides secure user login and session management through an authentication system. Users can create personalized profiles where they can track their submitted ideas and voting history. Authentication is essential for protecting user data and ensuring that only verified users can submit ideas or vote.
+- **Persistent Data Storage**: Stores all user submissions, votes, and preferences using a secure database. Each user’s voting history and saved submissions are stored persistently, ensuring that their contributions are tracked over time. Additionally, user preferences, such as their favorite voting system or topic categories, are saved to provide a personalized experience when they return.
+- **External API Integration**: Integrates with third-party APIs to allow users to enhance their idea submissions with additional media or information. For example, users could embed videos using the YouTube API, link to websites, or fetch live data via the Twitter API to support or elaborate on their ideas. This makes the submissions more interactive and media-rich.
+- **Responsive Design**: Features a responsive and visually appealing UI that encourages user interaction. The design ensures that users can submit ideas, vote, and interact with the platform seamlessly. The application will also include CSS animations to enhance the user experience, such as smooth transitions when an idea moves up or down in rankings, or hover effects on interactive elements.
 
 ## Technology Usage
 - **HTML**: The structure of the app includes a homepage, login page, and dashboard. Links and structural elements like headers and footers are correctly implemented.
