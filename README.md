@@ -17,8 +17,8 @@ Example:
 - **Responsive Design**: Features a responsive and visually appealing UI that encourages user interaction. The design ensures that users can submit ideas, vote, and interact with the platform seamlessly. The application will also include CSS animations to enhance the user experience, such as smooth transitions when an idea moves up or down in rankings, or hover effects on interactive elements.
 
 ## Technology Usage
-- **HTML**: The structure of the app includes a homepage, login page, and dashboard. Links and structural elements like headers and footers are correctly implemented.
-- **CSS**: CSS will ensure a modern, responsive design with animations for smoother interactions, ensuring accessibility across devices.
+- **HTML**: The structure of the app will include a login page for user authentication, a global ranking page that displays the real-time ranking of ideas, and a submission page where users can submit their ideas, including text or links. HTML will be used to structure these pages with proper headings, forms, links, and navigation elements, ensuring the correct layout and functionality across the app. Hyperlinks will be implemented to navigate between these core sections seamlessly.
+- **CSS**: The styling will emphasize clean layouts, good use of whitespace, and an intuitive color scheme for easy readability. It will also include animations for smooth transitions, such as when users submit ideas, cast votes, or when rankings update in real-time.
 - **JavaScript**: Manages dynamic behavior like handling user inputs, validating forms, and calling web service APIs.
 - **React**: The app is built with React, with reusable components and client-side routing for a smooth single-page experience.
 - **Web Service**: The backend will feature endpoints for data retrieval and submission. It will also call an external API like [insert API] for real-time data (e.g., weather, stock prices).
