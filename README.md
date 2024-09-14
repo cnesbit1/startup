@@ -1,4 +1,4 @@
-# My Startup Application
+# Startup Application: IdeaHub
 
 ## Elevator Pitch
 *Introducing "IdeaHub"—a platform where individual creativity meets community collaboration. IdeaHub empowers users to submit their best ideas, websites, images, and more, while voting on others using various systems like ranked choice, majority rule, and approval voting. Explore how different voting methods influence outcomes and discover which ideas rise to the top based on collective preferences. Whether you're an entrepreneur, a student, or a researcher, IdeaHub provides a dynamic space to experience how the way we vote can shape the future of innovation, while also getting to enjoy that innovation.*
