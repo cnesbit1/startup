@@ -6,7 +6,7 @@
 ## Application Design
 ![Login Page](https://github.com/user-attachments/assets/7a288440-a10b-4047-9756-aa45062cc87b)
 ![Voting Roster Page](https://github.com/user-attachments/assets/1d5ee879-0e87-4697-a6ae-7e6fdc1ee542)
-![User Profile/Submission Page]()![Screenshot 2024-09-13 220707](https://github.com/user-attachments/assets/25b3fc0c-5540-466f-9700-9acb26d07693)
+![User Profile/Submission Page](https://github.com/user-attachments/assets/25b3fc0c-5540-466f-9700-9acb26d07693)
 
 ## Key Features
 - **General Platform Usage**: The website provides a user-friendly interface where individuals can easily submit, browse, and vote on ideas. Upon logging in, users can navigate to the global ranking page to see the top ideas based on different voting systems, or head to the submission page to contribute their own ideas. The site is designed to support multiple voting systems, allowing users to experience ranked choice, majority rule, and approval voting. Users can track their contributions and interact with the community by voting for ideas in real-time.
