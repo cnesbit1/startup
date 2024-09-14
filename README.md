@@ -4,10 +4,9 @@
 *Introducing "BallotBox Exchange"—a platform where individual creativity meets community collaboration. BallotBox Exchange empowers users to submit their best ideas, websites, images, and more, while voting on others using various systems like ranked choice, majority rule, and approval voting. Explore how different voting methods influence outcomes and discover which ideas rise to the top based on collective preferences. Whether you're an entrepreneur, a student, or a researcher, BallotBox Exchange provides a dynamic space to experience how the way we vote can shape the future of innovation, while also getting to enjoy that innovation.*
 
 ## Application Design
-*Include embedded images of your rough sketches here. These could be from a tool like NinjaMock or pictures of hand-drawn designs.*
-
-Example:
-
+![Login Page](https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-1170x780.jpg)
+![Voting Roster Page](https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-1170x780.jpg)
+![User Profile Page/Submission Page](https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-1170x780.jpg)
 
 ## Key Features
 - **Real-Time Voting Interaction**: Leverages WebSockets to provide real-time updates on voting results and idea rankings as users cast their votes. When a vote is submitted, all users instantly see the updated leaderboard, rankings, or score breakdown based on the active voting system. This creates a dynamic experience where users can watch ideas rise and fall in real-time.
