@@ -6,13 +6,12 @@ The overall insights and objectives of this repository will be noted here.
 
 - **Elastic Public IP Address**: `44.209.159.76`
 
-- **SSH Command**:  
+- **SSH Command**:
+  These commands should be run in the startup repository itself.
   To access the server, use one of the following SSH commands:
   ```bash
   ssh -i ../260CNKey.pem ubuntu@44.209.159.76
-  ssh -i ../260CNKey.pem ubuntu@ballotboxexchange.com```
-
-This command should be run in the startup repository itself.
+  ssh -i ../260CNKey.pem ubuntu@ballotboxexchange.com
 
 Domain Name: ballotboxexchange.com
 Subdomains: www, simon, startup
