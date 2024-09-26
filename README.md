@@ -25,3 +25,16 @@
 - **Authentication**: A secure authentication system will manage user registration and login. Users will create accounts and securely log in to submit ideas and cast votes. The system will ensure that only registered users can participate, displaying the user’s name once logged in, and securing their session to protect sensitive data and interactions with the app.
 - **Database**: All user data, ideas, and votes will be stored in a secure database. User accounts, including login credentials and voting history, will be stored securely, alongside the submitted ideas with relevant metadata, such as timestamps and media links. The database will also store votes from users, allowing the app to calculate rankings based on different voting systems and update the results dynamically as new data is received.
 - **WebSocket**: WebSockets will enable real-time interaction across the app, particularly for the global ranking page. As users cast votes or submit new ideas, the app will instantly update the rankings and notify users of changes without needing a page refresh. This will create a dynamic experience where users can see how their votes impact the ranking of ideas in real-time, fostering greater engagement and interactivity.
+
+## HTML Deliverable
+
+➡️ The following is an example of the required information for the Startup HTML deliverable
+
+For this deliverable I built out the structure of my application using HTML.
+
+ HTML pages - Two HTML page that represent the ability to login and vote.
+ Links - The login page automatically links to the voter page. The voter page contains links for every voting choice.
+ Text - Each of the voting choices is represented by a textual description.
+ Images - I couldn't figure out how to include an image and so I didn't do this. 😔
+ DB/Login - Input box and submit button for login. The voting choices represent data pulled from the database.
+ WebSocket - The count of voting results represent the tally of realtime votes.
