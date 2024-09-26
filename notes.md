@@ -15,6 +15,8 @@ The overall insights and objectives of this repository will be noted here.
   These commands should be run in the startup repository itself.
 
 - **Domain Information**:
-  Domain Name: ballotboxexchange.com
-  
-  Subdomain Names: www, simon, startup
+  - **Domain Name**: ballotboxexchange.com
+  - **Subdomains**:
+    - www.ballotboxexchange.com
+    - simon.ballotboxexchange.com
+    - startup.ballotboxexchange.com
