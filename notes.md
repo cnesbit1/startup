@@ -14,5 +14,7 @@ The overall insights and objectives of this repository will be noted here.
   ```
   These commands should be run in the startup repository itself.
 
-Domain Name: ballotboxexchange.com
-Subdomains: www, simon, startup
+- **Domain Information**:
+  Domain Name: ballotboxexchange.com
+  
+  Subdomain Names: www, simon, startup
