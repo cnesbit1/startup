@@ -168,8 +168,3 @@ Media elements like `<img>`, `<audio>`, and `<video>` reference external files u
 </svg>
 ```
 
-### Accessibility and Best Practices
-Media elements should include accessibility attributes (e.g., `alt` for images) and provide user controls for a better experience.
-```
-
-This Markdown file contains the summary and examples from the HTML content you provided. Let me know if there’s anything you’d like to adjust! 😊
