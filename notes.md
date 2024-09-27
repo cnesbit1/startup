@@ -1,6 +1,6 @@
-# Repository Overview
+# Repository Notes
 
-The overall insights and objectives of this repository will be noted here.
+The overall insights and notes of concepts found within this repository will be noted here.
 
 ## Server and Access Information
 
