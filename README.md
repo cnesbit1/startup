@@ -28,12 +28,12 @@
 
 ## HTML Deliverable
 
-- HTML Pages - There are HTML pages that represent the ability to login, vote, and add new submissions.
+- HTML Pages: The application consists of three HTML pages (index.html, roster.html, and user.html) that support user login, voting on submissions, and adding new ideas. The index.html page handles login and signup functionality, roster.html displays a list of ideas with vote counts, and user.html provides a user profile view and idea submission form.
 - Proper Use of HTML Tags - 
-- Links - The login page has a link which connects to the roster page which contains links back to the login page and to the user submission page. The user submission page has two links to either log out or go back to the roster page.
+- Links: The index.html page includes a link to the roster.html page after login, while the roster.html page links back to the index.html page for logout and to user.html for accessing user profiles. The user.html page also includes navigation links back to roster.html and index.html.
 - Application Text Content - Each of the voting choices is represented by a textual description.
 - Third Party Service Call Placeholder - 
-- Application Images - I couldn't figure out how to include an image and so I didn't do this.
-- Login Placeholder - 
-- Database Placeholder - Input box and submit button for login. The voting choices represent data pulled from the database.
-- WebSocket Placeholder - The count of voting results represent the tally of realtime votes.
+- Application Images: An image placeholder has been added in index.html. Further updates to the image support of this website will be dealt with in the CSS deliverable which can more easily meld the right images to the website interface. More images will be added and stylized soon.
+- Login Placeholder: The index.html page has input fields for username, password, and email, along with a login button, representing a basic form structure for handling user authentication. Those input fields are also reflected for a Sign In section of the index.html file.
+- Database Placeholder: The roster.html page displays voting results and submission details in a table format, simulating data that would be fetched from a backend database. This structure serves as a placeholder for connecting to a database where voting data and user submissions would be stored and managed.
+- WebSocket Placeholder: The user.html page includes a placeholder for real-time communication with the server. This would be necessary for updating the list of submissions or synchronizing voting preferences dynamically based on user interaction.
