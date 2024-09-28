@@ -28,9 +28,12 @@
 
 ## HTML Deliverable
 
-- HTML pages - Two HTML page that represent the ability to login and vote.
-- Links - The login page automatically links to the voter page. The voter page contains links for every voting choice.
-- Text - Each of the voting choices is represented by a textual description.
-- Images - I couldn't figure out how to include an image and so I didn't do this.DB/Login
-- Input box and submit button for login. The voting choices represent data pulled from the database.
-- WebSocket - The count of voting results represent the tally of realtime votes.
+- HTML Pages - There are HTML pages that represent the ability to login, vote, and add new submissions.
+- Proper Use of HTML Tags - 
+- Links - The login page has a link which connects to the roster page which contains links back to the login page and to the user submission page. The user submission page has two links to either log out or go back to the roster page.
+- Application Text Content - Each of the voting choices is represented by a textual description.
+- Third Party Service Call Placeholder - 
+- Application Images - I couldn't figure out how to include an image and so I didn't do this.
+- Login Placeholder - 
+- Database Placeholder - Input box and submit button for login. The voting choices represent data pulled from the database.
+- WebSocket Placeholder - The count of voting results represent the tally of realtime votes.
