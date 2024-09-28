@@ -7,53 +7,79 @@
 </head>
 <body>
 
-    <!-- BallotBox Roster Section -->
-    <section id="ballotbox-roster">
-        <h2>BallotBox Roster</h2>
-        <div>
-            <label for="voting-system">Voting System:</label>
-            <input type="text" id="voting-system">
-        </div>
-        <a href="user.html"><button>User Profile</button></a>
-        <a href="index.html"><button>Log Out</button></a>
+    <!-- Header Section -->
+    <header>
+        <h1>BallotBox Roster</h1>
+        <nav>
+            <a href="index.html">Log Out</a>
+            <a href="user.html">User Profile</a>
+        </nav>
+    </header>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Place</th>
-                    <th>Text</th>
-                    <th>Votes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Idea 1</td>
-                    <td>43</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Idea 2</td>
-                    <td>34</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Idea 3</td>
-                    <td>23</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Idea 4</td>
-                    <td>22</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Idea 5</td>
-                    <td>22</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <!-- Main Content Section -->
+    <main>
+        <!-- BallotBox Roster Section -->
+        <section id="ballotbox-roster">
+            <h2>Voting System</h2>
+
+            <!-- Placeholder for Username Display -->
+            <div id="username-display">
+                <p><strong>Logged in as:</strong> [Username Placeholder]</p>
+            </div>
+
+            <div>
+                <label for="voting-system">Voting System:</label>
+                <input type="text" id="voting-system">
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Place</th>
+                        <th>Text</th>
+                        <th>Votes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Idea 1</td>
+                        <td>43</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Idea 2</td>
+                        <td>34</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Idea 3</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Idea 4</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Idea 5</td>
+                        <td>22</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p> Connor Nesbit </p>
+        <p> GitHub: 
+            <a href="https://github.com/cnesbit1/startup" target="_blank">
+                Startup Repository
+            </a>
+        </p>
+    </footer>
 
 </body>
 </html>

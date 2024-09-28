@@ -7,69 +7,95 @@
 </head>
 <body>
 
-    <!-- User Profile Section -->
-    <section id="user-profile">
-        <h2>User Profile</h2>
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" disabled>
-            <button>Change</button>
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" disabled>
-            <button>Change</button>
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" disabled>
-            <button>Change</button>
-        </div>
-        <div>
-            <label for="voting-preference">Voting System Preference:</label>
-            <input type="text" id="voting-preference">
-        </div>
-        <a href="roster.html"><button>Roster</button></a>
-        <a href="index.html"><button>Log Out</button></a>
-    </section>
+    <!-- Header Section -->
+    <header>
+        <h1>User Profile</h1>
+        <nav>
+            <a href="roster.html">Roster</a>
+            <a href="index.html">Log Out</a>
+        </nav>
+    </header>
 
-    <!-- Idea Submission Section -->
-    <section id="idea-submission">
-        <h2>Idea Submission</h2>
-        <div id="submission-requirements">
-            <p>Submission Requirements Paragraph</p>
-        </div>
-        
-        <div id="submissions">
-            <p>Submissions</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Text</th>
-                        <th>Votes</th>
-                        <th>Place</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Hello World</td>
-                        <td>12</td>
-                        <td>4th</td>
-                    </tr>
-                    <tr>
-                        <td>Her</td>
-                        <td>4</td>
-                        <td>32nd</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <div id="new-submission">
-            <p>New Submission</p>
-            <input type="text" placeholder="Enter your submission">
-        </div>
-    </section>
+    <!-- Main Content Section -->
+    <main>
+        <!-- User Profile Section -->
+        <section id="user-profile">
+            <h2>User Profile Information</h2>
+
+            <!-- Placeholder for Username Display -->
+            <div id="username-display">
+                <p><strong>Username:</strong> [Username Placeholder]</p>
+            </div>
+
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" disabled>
+                <button>Change</button>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" disabled>
+                <button>Change</button>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" disabled>
+                <button>Change</button>
+            </div>
+            <div>
+                <label for="voting-preference">Voting System Preference:</label>
+                <input type="text" id="voting-preference">
+            </div>
+        </section>
+
+        <!-- Idea Submission Section -->
+        <section id="idea-submission">
+            <h2>Idea Submission</h2>
+            <div id="submission-requirements">
+                <p>Please ensure that your submission is original, clear, relevant to the objectives of BallotBox Exchange, concise (under 300 words), and free of any personal, confidential, or sensitive information.</p>
+            </div>
+
+            <div id="submissions">
+                <p>Submissions</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Text</th>
+                            <th>Votes</th>
+                            <th>Place</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hello World</td>
+                            <td>12</td>
+                            <td>4th</td>
+                        </tr>
+                        <tr>
+                            <td>Her</td>
+                            <td>4</td>
+                            <td>32nd</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="new-submission">
+                <p>New Submission</p>
+                <input type="text" placeholder="Enter your submission">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p> Connor Nesbit </p>
+        <p> GitHub: 
+            <a href="https://github.com/cnesbit1/startup" target="_blank">
+                Startup Repository
+            </a>
+        </p>
+    </footer>
 
 </body>
 </html>

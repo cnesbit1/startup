@@ -28,6 +28,8 @@
 
 ## HTML Deliverable
 
+All of these requirements have been completed.
+
 - HTML Pages: The application consists of three HTML pages (index.html, roster.html, and user.html) that support user login, voting on submissions, and adding new ideas. The index.html page handles login and signup functionality, roster.html displays a list of ideas with vote counts, and user.html provides a user profile view and idea submission form.
 - Proper Use of HTML Tags: Each page is structured using semantic HTML tags such as `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`, and more. This organization helps ensure maintenance of the codebase. The `<header>` and `<footer>` tags are used to encapsulate navigation links and page-specific information, while the `<main>` tag is used to contain the core content of each page.
 - Links: The index.html page includes a link to the roster.html page after login, while the roster.html page links back to the index.html page for logout and to user.html for accessing user profiles. The user.html page also includes navigation links back to roster.html and index.html.
