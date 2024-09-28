@@ -1,104 +1,97 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BallotBox Exchange</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BallotBox Exchange</title>
 
-    <!-- Firebase Authentication Placeholder -->
-    <!-- Firebase SDK Scripts for Authentication (to be configured later) -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
-    <script>
-        // Placeholder for Firebase configuration
-        const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_PROJECT_ID.appspot.com",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
-        };
+        <!-- Firebase SDK Scripts for Authentication (to be configured later) -->
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+        <script>
+            // Placeholder for Firebase configuration
+            const firebaseConfig = {
+                apiKey: "YOUR_API_KEY",
+                authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+                projectId: "YOUR_PROJECT_ID",
+                storageBucket: "YOUR_PROJECT_ID.appspot.com",
+                messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+                appId: "YOUR_APP_ID"
+            };
 
-        // Placeholder: Initialize Firebase App
-        // const app = firebase.initializeApp(firebaseConfig);
-        // const auth = firebase.getAuth(app);
+            // Placeholder: Initialize Firebase App
+            // const app = firebase.initializeApp(firebaseConfig);
+            // const auth = firebase.getAuth(app);
 
-        // Placeholder for Firebase Authentication logic (Login, Sign Up)
-    </script>
-</head>
-<body>
+            // Placeholder for Firebase Authentication logic (Login, Sign Up)
+        </script>
+    </head>
+    
+    <body>
+        <header>
+            <h1>BallotBox Exchange</h1>
+            <nav>
+                <a href="roster.html">Roster</a>
+                <a href="user.html">User Profile</a>
+            </nav>
+        </header>
 
-    <!-- Header Section -->
-    <header>
-        <h1>BallotBox Exchange</h1>
-        <nav>
-            <a href="roster.html">Roster</a>
-            <a href="user.html">User Profile</a>
-        </nav>
-    </header>
-
-    <!-- Main Content Section -->
-    <main>
-        <!-- BallotBox Exchange Section -->
-        <section id="ballotbox-exchange">
-            <h2>Welcome to BallotBox Exchange</h2>
-            <div id="elevator-pitch">
-                <p>Introducing "BallotBox Exchange"—a platform where individual creativity meets community collaboration. BallotBox Exchange empowers users to submit their best ideas, websites, text, and more, while voting on others using various systems like ranked choice, majority rule, and approval voting. Explore how different voting methods influence outcomes and discover which ideas rise to the top based on collective preferences.</p>
-            </div>
-
-            <!-- Login Form -->
-            <div id="login-form">
-                <h3>Login</h3>
-                <div>
-                    <label for="login-username">Username:</label>
-                    <input type="text" id="login-username">
+        <main>
+            <section id="ballotbox-exchange">
+                <h2>Welcome to BallotBox Exchange</h2>
+                <div id="elevator-pitch">
+                    <p>Introducing "BallotBox Exchange"—a platform where individual creativity meets community collaboration. BallotBox Exchange empowers users to submit their best ideas, websites, text, and more, while voting on others using various systems like ranked choice, majority rule, and approval voting. Explore how different voting methods influence outcomes and discover which ideas rise to the top based on collective preferences.</p>
                 </div>
-                <div>
-                    <label for="login-password">Password:</label>
-                    <input type="password" id="login-password">
+
+                <div id="login-form">
+                    <h3>Login</h3>
+                    <div>
+                        <label for="login-username">Username:</label>
+                        <input type="text" id="login-username">
+                    </div>
+                    <div>
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password">
+                    </div>
+                    <div>
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email">
+                    </div>
+                    <a href="roster.html">
+                        <button type="button">Login</button>
+                    </a>
                 </div>
-                <div>
-                    <label for="login-email">Email:</label>
-                    <input type="email" id="login-email">
+
+                <div id="sign-in-form">
+                    <h3>Sign In</h3>
+                    <div>
+                        <label for="signin-username">Username:</label>
+                        <input type="text" id="signin-username">
+                    </div>
+                    <div>
+                        <label for="signin-password">Password:</label>
+                        <input type="password" id="signin-password">
+                    </div>
+                    <div>
+                        <label for="signin-email">Email:</label>
+                        <input type="email" id="signin-email">
+                    </div>
+
+                    <a href="roster.html">
+                        <button type="button">Sign In</button>
+                    </a>
                 </div>
-                <a href="roster.html">
-                    <button type="button">Login</button>
+            </section>
+        </main>
+
+        <footer>
+            <p> Connor Nesbit </p>
+            <p> GitHub: 
+                <a href="https://github.com/cnesbit1/startup" target="_blank">
+                    Startup Repository
                 </a>
-            </div>
-
-            <!-- Sign In Form -->
-            <div id="sign-in-form">
-                <h3>Sign In</h3>
-                <div>
-                    <label for="signin-username">Username:</label>
-                    <input type="text" id="signin-username">
-                </div>
-                <div>
-                    <label for="signin-password">Password:</label>
-                    <input type="password" id="signin-password">
-                </div>
-                <div>
-                    <label for="signin-email">Email:</label>
-                    <input type="email" id="signin-email">
-                </div>
-
-                <a href="roster.html">
-                    <button type="button">Sign In</button>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer Section -->
-    <footer>
-        <p> Connor Nesbit </p>
-        <p> GitHub: 
-            <a href="https://github.com/cnesbit1/startup" target="_blank">
-                Startup Repository
-            </a>
-        </p>
-    </footer>
-
-</body>
+            </p>
+        </footer>
+    </body>
 </html>
