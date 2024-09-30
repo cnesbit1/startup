@@ -178,6 +178,60 @@ The CSS Flexible Box Layout, commonly known as Flexbox, is a layout model design
 - Space Distribution: Flexbox makes it easy to control space between items and their alignment within the container using properties like justify-content, align-items, and flex-grow.
 - Responsive Design: Flexbox is a great tool for building layouts that respond to changes in screen size without the need for complex CSS media queries.
 
+```css
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+}
+
+header, footer {
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+header {
+    flex: 0 80px;
+}
+
+footer {
+    flex: 0 30px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.controls {
+    flex: 1;
+    background-color: #dbe9e9;
+    padding: 1rem;
+}
+
+.content {
+    flex: 3;
+    background-color: #f5f5f5;
+    padding: 1rem;
+}
+
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+    }
+}
+
+@media (max-height: 700px) {
+    header, footer {
+        display: none;
+    }
+}
+```
+
 ### CSS Frameworks
 CSS frameworks are collections of pre-defined CSS rules and components that help developers build web applications quickly and consistently. They provide common styling patterns, layouts, and UI components, so you don't have to write everything from scratch.
 
