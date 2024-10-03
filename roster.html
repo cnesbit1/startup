@@ -11,24 +11,33 @@
 
     <body>
         <header>
+            <img src="images/voting-icon.webp" alt="Left Logo" class="header-logo left-logo">
             <h1>BallotBox Roster</h1>
             <nav>
-                <a href="index.html">Log Out</a>
                 <a href="user.html">User Profile</a>
+                <a href="index.html">Log Out</a>
             </nav>
+            <img src="images/voting-icon.webp" alt="Right Logo" class="header-logo right-logo">
+        
+            <div id="username-display" class="info-display">
+                <p><strong>Logged in as:</strong> [Username Placeholder]</p>
+            </div>
         </header>
 
         <main>
             <section id="ballotbox-roster">
-                <h2>Voting System</h2>
-
-                <div id="username-display">
-                    <p><strong>Logged in as:</strong> [Username Placeholder]</p>
-                </div>
-
-                <div>
-                    <label for="voting-system">Voting System:</label>
-                    <input type="text" id="voting-system">
+                <h2 id="current-voting-system">Voting System: Current Voting System</h2> <!-- Header to display the current system -->
+                <div class="voting-system-container">
+                    <label for="voting-system" class="voting-system-label">Select Voting Type:</label>
+                    
+                    <select id="voting-system" class="voting-system-select">
+                        <option value="" disabled selected>Select a voting system...</option>
+                        <option value="Ranked Choice Voting">Ranked Choice Voting</option>
+                        <option value="Approval Voting">Approval Voting</option>
+                        <option value="Majority Rule">Majority Rule</option>
+                        <option value="Plurality Voting">Plurality Voting</option>
+                        <option value="Borda Count">Borda Count</option>
+                    </select>
                 </div>
 
                 <table>
@@ -71,12 +80,20 @@
         </main>
 
         <footer>
-            <p> Connor Nesbit </p>
-            <p> GitHub: 
-                <a href="https://github.com/cnesbit1/startup" target="_blank">
-                    Startup Repository
-                </a>
-            </p>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: <a href="mailto:connornesbit@gmail.com">connornesbit@gmail.com</a></p>
+                    <p>Phone Number: (480) 798-7427</p>
+                    <p>GitHub:<a href="https://github.com/cnesbit1/startup">Startup Repository</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>BallotBox Exchange is dedicated to empowering communities through transparent voting and collaboration.</p>
+                    <p>&copy; 2024 BallotBox Exchange. All rights reserved.</p>
+                </div>
+            </div>
         </footer>
     </body>
 

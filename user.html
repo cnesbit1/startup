@@ -11,18 +11,25 @@
 
     <body>
         <header>
+            <img src="images/voting-icon.webp" alt="Left Logo" class="header-logo left-logo">
             <h1>User Profile</h1>
             <nav>
                 <a href="roster.html">Roster</a>
                 <a href="index.html">Log Out</a>
             </nav>
+            <img src="images/voting-icon.webp" alt="Right Logo" class="header-logo right-logo">
+        
+            <!-- New Username Display Section -->
+            <div id="username-display" class="info-display">
+                <p><strong>Logged in as:</strong> [Username Placeholder]</p>
+            </div>
         </header>
 
         <main>
             <section id="user-profile">
                 <h2>User Profile Information</h2>
 
-                <div id="username-display">
+                <div id="username-display" class="info-display">
                     <p><strong>Username:</strong> [Username Placeholder]</p>
                 </div>
 
@@ -31,19 +38,36 @@
                     <input type="text" id="username" disabled>
                     <button>Change</button>
                 </div>
+
+                <div id="password-display" class="info-display">
+                    <p><strong>Password:</strong> [Password Placeholder]</p>
+                </div>
+
                 <div>
                     <label for="password">Password:</label>
                     <input type="password" id="password" disabled>
                     <button>Change</button>
+                </div>
+
+                <div id="email-display" class="info-display">
+                    <p><strong>Email:</strong> [Email Placeholder]</p>
                 </div>
                 <div>
                     <label for="email">Email:</label>
                     <input type="email" id="email" disabled>
                     <button>Change</button>
                 </div>
-                <div>
-                    <label for="voting-preference">Voting System Preference:</label>
-                    <input type="text" id="voting-preference">
+                <!-- Voting System Preference Section -->
+                <div class="voting-preference-container">
+                    <label for="voting-preference" class="voting-preference-label">Voting System Preference:</label>
+                    <select id="voting-preference" class="voting-preference-select">
+                        <option value="" disabled selected>Select a voting system...</option>
+                        <option value="Ranked Choice Voting">Ranked Choice Voting</option>
+                        <option value="Approval Voting">Approval Voting</option>
+                        <option value="Majority Rule">Majority Rule</option>
+                        <option value="Plurality Voting">Plurality Voting</option>
+                        <option value="Borda Count">Borda Count</option>
+                    </select>
                 </div>
             </section>
 
@@ -53,7 +77,7 @@
                     <p>Please ensure that your submission is original, clear, relevant to the objectives of BallotBox Exchange, concise (under 300 words), and free of any personal, confidential, or sensitive information.</p>
                 </div>
 
-                <div id="submissions">
+                <div id="submissions" class="info-display">
                     <p>Submissions</p>
                     <table>
                         <thead>
@@ -78,7 +102,7 @@
                     </table>
                 </div>
 
-                <div id="new-submission">
+                <div id="new-submission" class="info-display">
                     <p>New Submission</p>
                     <input type="text" placeholder="Enter your submission">
                 </div>
@@ -86,12 +110,20 @@
         </main>
 
         <footer>
-            <p> Connor Nesbit </p>
-            <p> GitHub: 
-                <a href="https://github.com/cnesbit1/startup" target="_blank">
-                    Startup Repository
-                </a>
-            </p>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: <a href="mailto:connornesbit@gmail.com">connornesbit@gmail.com</a></p>
+                    <p>Phone Number: (480) 798-7427</p>
+                    <p>GitHub:<a href="https://github.com/cnesbit1/startup">Startup Repository</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>BallotBox Exchange is dedicated to empowering communities through transparent voting and collaboration.</p>
+                    <p>&copy; 2024 BallotBox Exchange. All rights reserved.</p>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

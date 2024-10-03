@@ -32,68 +32,72 @@
     
     <body>
         <header>
+            <img src="images/voting-icon.webp" alt="Left Logo" class="header-logo left-logo">
             <h1>BallotBox Exchange</h1>
-            <nav>
-                <a href="roster.html">Roster</a>
-                <a href="user.html">User Profile</a>
-            </nav>
+            <img src="images/voting-icon.webp" alt="Right Logo" class="header-logo right-logo">
         </header>
 
         <main>
             <section id="ballotbox-exchange">
                 <h2>Welcome to BallotBox Exchange</h2>
                 <div id="elevator-pitch">
-                    <p>Introducing "BallotBox Exchange"—a platform where individual creativity meets community collaboration. BallotBox Exchange empowers users to submit their best ideas, websites, text, and more, while voting on others using various systems like ranked choice, majority rule, and approval voting. Explore how different voting methods influence outcomes and discover which ideas rise to the top based on collective preferences.</p>
+                    <p>Introducing "BallotBox Exchange"— a platform where individual creativity meets community collaboration. BallotBox Exchange empowers users to submit their best ideas, websites, text, and more, while voting on others using various systems like ranked choice, majority rule, and approval voting. Explore how different voting methods influence outcomes and discover which ideas rise to the top based on collective preferences.</p>
                 </div>
-
-                <div id="login-form">
-                    <h3>Login</h3>
-                    <div>
-                        <label for="login-username">Username:</label>
-                        <input type="text" id="login-username">
+            
+                <div id="auth-container">
+                    <div id="login-form">
+                        <h3>Login</h3>
+                        <div>
+                            <label for="login-username">Username:</label>
+                            <input type="text" id="login-username">
+                        </div>
+                        <div>
+                            <label for="login-password">Password:</label>
+                            <input type="password" id="login-password">
+                        </div>
+                        <a href="roster.html">
+                            <button type="button">Login</button>
+                        </a>
                     </div>
-                    <div>
-                        <label for="login-password">Password:</label>
-                        <input type="password" id="login-password">
+            
+                    <div id="sign-in-form">
+                        <h3>Sign Up</h3>
+                        <div>
+                            <label for="signin-username">Username:</label>
+                            <input type="text" id="signin-username">
+                        </div>
+                        <div>
+                            <label for="signin-password">Password:</label>
+                            <input type="password" id="signin-password">
+                        </div>
+                        <div>
+                            <label for="signin-email">Email:</label>
+                            <input type="email" id="signin-email">
+                        </div>
+                        <a href="roster.html">
+                            <button type="button">Sign Up</button>
+                        </a>
                     </div>
-                    <div>
-                        <label for="login-email">Email:</label>
-                        <input type="email" id="login-email">
-                    </div>
-                    <a href="roster.html">
-                        <button type="button">Login</button>
-                    </a>
-                </div>
-
-                <div id="sign-in-form">
-                    <h3>Sign In</h3>
-                    <div>
-                        <label for="signin-username">Username:</label>
-                        <input type="text" id="signin-username">
-                    </div>
-                    <div>
-                        <label for="signin-password">Password:</label>
-                        <input type="password" id="signin-password">
-                    </div>
-                    <div>
-                        <label for="signin-email">Email:</label>
-                        <input type="email" id="signin-email">
-                    </div>
-
-                    <a href="roster.html">
-                        <button type="button">Sign In</button>
-                    </a>
                 </div>
             </section>
+            
         </main>
 
         <footer>
-            <p> Connor Nesbit </p>
-            <p> GitHub: 
-                <a href="https://github.com/cnesbit1/startup" target="_blank">
-                    Startup Repository
-                </a>
-            </p>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: <a href="mailto:connornesbit@gmail.com">connornesbit@gmail.com</a></p>
+                    <p>Phone Number: (480) 798-7427</p>
+                    <p>GitHub:<a href="https://github.com/cnesbit1/startup">Startup Repository</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>BallotBox Exchange is dedicated to empowering communities through transparent voting and collaboration.</p>
+                    <p>&copy; 2024 BallotBox Exchange. All rights reserved.</p>
+                </div>
+            </div>
         </footer>
     </body>
 </html>
