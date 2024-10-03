@@ -38,3 +38,19 @@ All of these requirements have been completed.
 - Login Placeholder: The index.html page includes input fields for username, password, and email, along with a login button, forming a basic user authentication structure. A similar set of input fields is present under the "Sign In" section to allow for new user registration. These fields act as placeholders for functionality that would typically interact with a backend authentication system.
 - Database Placeholder: The roster.html page displays voting results and submission details using a table layout, which simulates data that would typically be fetched from a backend database. This setup acts as a placeholder for integrating database connections where voting data and user submissions would be stored and retrieved.
 - WebSocket Placeholder: The user.html page includes placeholders for real-time communication, which would be necessary for updating submissions dynamically or synchronizing voting preferences as users interact with the application. This feature would rely on WebSocket technology for live updates.
+
+## CSS Deliverable
+
+All of these requirements have been completed.
+
+- Header, Footer, and Main Content Body: The header and footer use flexbox for structure, ensuring all elements are evenly spaced. The header features a dark blue background, and the footer uses the same color for visual consistency. The main content area is centrally aligned with padding for spacing. It is a light gray. There are red highlights for each section in the footer.
+
+- Navigation Elements: Navigation links are styled with white text, padding, and hover effects that change the background to white and text to dark blue. The navigation elements are hidden on smaller screens to maintain a clean layout.
+
+- Responsive Design: Media queries are used to adjust layouts and hide elements like logos and navigation links on smaller screens. Text sizes and element visibility change based on screen width, ensuring content fits properly on all devices.
+
+- Application Elements: Forms have a uniform style with border radius, box shadows, and padding. Buttons use a consistent red color scheme with hover effects. Tables have alternating row colors and hover effects for readability.
+
+- Application Text Content: Headings and paragraphs are aligned and styled with a dark blue color for consistency. Emphasis is placed on strong tags, which are highlighted in red to draw attention to key details.
+
+- Application Images: Images are aligned using flexbox and have defined sizes to prevent overflow. They are set to disappear on smaller screens to ensure the layout remains intact without visual clutter.
