@@ -43,14 +43,14 @@ All of these requirements have been completed.
 
 All of these requirements have been completed.
 
-- Header, Footer, and Main Content Body: The header and footer are consistently styled with a dark blue background color `(#203864)` and white text, utilizing flexbox for structure and spacing. The main content body has a light gray background and is centrally aligned with padding for spacing, and there are red highlights used for section titles and borders to add contrast and emphasis.
+- Header, Footer, and Main Content Body: The header and footer are consistently styled with a dark blue background color `(#203864)` and white text, using consistent spacing and alignment. The main content body has a light gray background and is centrally aligned with padding for spacing, and there are red highlights used for section titles and borders to add contrast and emphasis.
 
-- Navigation Elements: Navigation links are styled with white text, padding, and hover effects that change the background to white and the text to dark blue. Media queries hide navigation links on smaller screens to avoid clutter, using a display toggle to maintain layout consistency. The initial log in page does not have these links to simulate proper website authentification protocol.
+- Navigation Elements: Navigation links are styled with white text, padding, and hover effects that change the background to white and the text to dark blue. The initial `index.html` page does not have these links to simulate proper website authentification protocol.
 
 - Responsive Design: Responsive styling has been implemented using media queries in the `responsive.css` file. Elements such as logos, navigation links, and layout configurations adjust or disappear based on screen size. Text sizes and padding are adjusted to ensure the design remains visually appealing and functional on all devices.
 
 - Application Elements: Forms and buttons use a consistent red color scheme for primary actions with hover states that darken the color. Tables are styled with alternating row colors for readability, and they include hover effects to highlight rows on interaction. Borders and shadows provide depth and separation for different sections.
 
-- Application Text Content: Headings and paragraphs are styled with dark blue text `(#203864)`, and links have a distinctive gold color `(#ffd700)`. Strong tags are highlighted in red (#e63946) to emphasize important information. The text in the header and footer uses white to contrast against the dark blue background.
+- Application Text Content: Headings and paragraphs are styled with dark blue text `(#203864)`, and links have a distinctive gold color `(#ffd700)`. Strong tags are highlighted in red `(#e63946)` to emphasize important information. The text in the header and footer uses white to contrast against the dark blue background.
 
-- Application Images: A voting icon image has been added to the header twice on each page of the website. These images are aligned using flexbox and have defined sizes to prevent overflow. On smaller screens, they are set to disappear to maintain a clean and uncluttered layout.
+- Application Images: A voting icon image has been added to the header twice on each page of the website. These images are positioned in the header and have defined sizes to prevent overflow. 
