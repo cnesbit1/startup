@@ -1,0 +1,88 @@
+/* ============================ */
+/* 13. Responsive Design */
+/* ============================ */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-logo {
+        display: none;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .info-display {
+        padding: 15px;
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    table, form, div#login-form, div#sign-in-form {
+        width: 100%;
+    }
+
+    .auth-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth-container form {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .voting-system-container,
+    .voting-preference-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .voting-system-select,
+    .voting-preference-select {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #submissions, #new-submission {
+        padding: 15px;
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    #new-submission input[type="text"] {
+        width: 100%;
+    }
+
+    #username-display {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    header nav {
+        display: none;
+    }
+}
+
+@media (max-width: 590px) {
+    .header-logo {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+}
