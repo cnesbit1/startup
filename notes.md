@@ -239,3 +239,6 @@ CSS frameworks are collections of pre-defined CSS rules and components that help
 
 - Bootstrap: A widely used framework with a comprehensive set of components, a responsive grid system, and built-in support for UI elements. It uses a "mobile-first" approach and offers utilities for building responsive layouts.
 - Tailwind CSS: A utility-first framework that provides low-level utility classes to build custom designs. Instead of relying on predefined components, Tailwind lets you style elements directly in your HTML, giving you more flexibility and control.
+
+
+## JAVASCRIPT
