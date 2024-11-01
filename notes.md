@@ -241,4 +241,7 @@ CSS frameworks are collections of pre-defined CSS rules and components that help
 - Tailwind CSS: A utility-first framework that provides low-level utility classes to build custom designs. Instead of relying on predefined components, Tailwind lets you style elements directly in your HTML, giving you more flexibility and control.
 
 
-## JAVASCRIPT
+## JavaScript
+
+
+## React
