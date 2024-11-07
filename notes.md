@@ -309,8 +309,123 @@ The `async` and `await` keywords simplify working with promises by allowing asyn
 #### 22. Debugging JavaScript
 Debugging JavaScript is a crucial skill for resolving bugs and improving code quality. Common techniques include using `console.log` to track variable values and employing browser developer tools to set breakpoints, inspect elements, and analyze the execution flow. These tools help developers understand and fix issues by providing real-time feedback, essential for troubleshooting both simple and complex issues in JavaScript code&#8203;:contentReference[oaicite:5]{index=5}.
 
-## 23. Node.js
+#### 23. Node.js
 Node.js is a runtime environment that allows JavaScript to run on the server, outside of a browser. Built on Google’s V8 JavaScript engine, Node.js has transformed JavaScript into a full-stack language, capable of handling server-side tasks. It supports asynchronous programming and is highly efficient for I/O-bound tasks, making it widely used in modern web applications for handling backend logic and APIs&#8203;:contentReference[oaicite:6]{index=6}.
 
+### JavaScript Code Snippets
 
+#### 1. Asynchronous API Call with `async`/`await`, Promises, and Local Storage
+
+```javascript
+// Function to fetch user data and cache it in localStorage
+async function fetchUserData(userId) {
+  const cachedUser = localStorage.getItem(`user_${userId}`);
+  if (cachedUser) {
+    console.log("Loaded from cache:", JSON.parse(cachedUser));
+    return JSON.parse(cachedUser);
+  }
+  
+  try {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+    if (!response.ok) throw new Error("Failed to fetch user data");
+    
+    const userData = await response.json();
+    localStorage.setItem(`user_${userId}`, JSON.stringify(userData));
+    console.log("Fetched and cached:", userData);
+    return userData;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+fetchUserData(1); // Fetch and cache user data
+```
+#### 2. Manipulating the DOM with Destructuring, Rest/Spread, and Classes
+
+```javascript
+class User {
+  constructor({ id, name, email, ...rest }) {
+    this.id = id;
+    this.name = name;
+    this.email = email;
+    this.otherProps = { ...rest };
+  }
+
+  render() {
+    const userCard = document.createElement("div");
+    userCard.classList.add("user-card");
+    userCard.innerHTML = `
+      <h2>${this.name}</h2>
+      <p>Email: ${this.email}</p>
+    `;
+    document.body.appendChild(userCard);
+  }
+}
+
+// Example usage
+const user = new User({ id: 1, name: "Jane Doe", email: "jane@example.com", age: 25 });
+user.render();
+```
+
+#### 3. Handling Errors with try/catch and Async Logic
+
+```javascript
+async function getUserWithError(userId) {
+  try {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+    if (!response.ok) throw new Error("User not found");
+
+    const { id, name, email } = await response.json(); // Destructure response
+    console.log(`Fetched User - ID: ${id}, Name: ${name}, Email: ${email}`);
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+}
+
+getUserWithError(1000); // Example with an invalid ID to trigger the error
+
+```
+#### 4. Using Classes, Modules, and the this Context
+
+```javascript
+// counter.js (Module export)
+export class Counter {
+  constructor() {
+    this.count = 0;
+  }
+
+  increment() {
+    this.count += 1;
+    console.log(`Current count: ${this.count}`);
+  }
+
+  reset() {
+    this.count = 0;
+    console.log("Counter reset.");
+  }
+}
+
+// main.js (Module import and usage)
+import { Counter } from './counter.js';
+
+const counter = new Counter();
+counter.increment(); // Output: Current count: 1
+counter.increment(); // Output: Current count: 2
+counter.reset();      // Output: Counter reset.
+
+```
+#### 5. Regular Expressions and console for Debugging
+```javascript
+const sampleText = `
+  Contact us at support@example.com or sales@domain.com. 
+  Visit us at https://example.com.
+`;
+
+// Regular expression to match email addresses
+const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z]{2,}\b/g;
+
+const foundEmails = sampleText.match(emailRegex);
+console.log("Extracted emails:", foundEmails); // Logs all matched email addresses
+
+```
 ## React
