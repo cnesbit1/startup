@@ -1,3 +1,3 @@
-[submodule "simon-css"]
-	path = simon-css
-	url = https://github.com/webprogramming260/simon-css.git
+[submodule "simon-react"]
+	path = simon-react
+	url = https://github.com/webprogramming260/simon-react.git
