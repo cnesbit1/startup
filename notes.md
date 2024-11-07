@@ -429,3 +429,115 @@ console.log("Extracted emails:", foundEmails); // Logs all matched email address
 
 ```
 ## React
+
+#### 1. React Hooks
+React hooks allow functional components in React to leverage features previously only accessible to class components, such as state management and lifecycle methods. With hooks, functions like `useState` and `useEffect` are used to manage state and perform side effects in a React component, making functional components the preferred approach for building React applications. Hooks also enable cleaner, modular code by reducing the reliance on complex class components&#8203;:contentReference[oaicite:0]{index=0}.
+
+#### 2. Reactivity in React
+Reactivity is the ability of a UI to update in response to changes in data or user input. In React, reactivity is managed through props, state, and the `render` function. When a component’s state or props change, React detects this and re-renders the component, ensuring that the interface reflects the latest data. React achieves this by tracking dependencies and selectively re-rendering only the components that need updating, enhancing performance and user experience&#8203;:contentReference[oaicite:1]{index=1}.
+
+#### 3. React Router
+React Router is essential for building single-page applications (SPAs), where users navigate through different views within a single HTML page. It manages routing by controlling which components render based on the URL path, simulating the effect of navigating between different pages. The `BrowserRouter`, `Routes`, `Route`, and `Link` components from `react-router-dom` v6 provide a straightforward approach to defining routes and links, giving React applications a dynamic, multi-page feel without actual page reloads&#8203;:contentReference[oaicite:2]{index=2}.
+
+#### 4. Vite
+Vite is a modern frontend build tool that provides a fast and efficient development environment for JavaScript frameworks like React. It simplifies project setup by bundling, transpiling, and minifying code and offering support for JSX, TypeScript, and CSS pre-processing out of the box. By running a development server and hot-reloading changes instantly, Vite enables developers to quickly iterate on their applications, making it an ideal toolchain for React projects&#8203;:contentReference[oaicite:3]{index=3}.
+
+#### 5. Toolchains
+A toolchain is a set of tools used to automate various aspects of development, such as code formatting, testing, transpiling, and deployment. In a React project, toolchains typically include tools like GitHub for version control, Vite for development, ESBuild for bundling, and PostCSS for CSS processing. Each component in the toolchain improves workflow by automating repetitive tasks, ensuring consistent code quality, and streamlining deployment to production environments&#8203;:contentReference[oaicite:4]{index=4}.
+
+#### 6. React Components
+React components are the building blocks of a React application, representing individual pieces of the user interface. Each component encapsulates its structure, behavior, and presentation logic, enabling code reuse and modularity. Components can be functional or class-based, although functional components, often written with hooks, are now the preferred approach. Components return JSX, which is rendered into HTML by React, allowing dynamic UI updates based on state and props&#8203;:contentReference[oaicite:5]{index=5}.
+
+#### 7. React
+React is a popular JavaScript library for building user interfaces, especially SPAs. Created by Facebook, React focuses on creating interactive UIs by using components that respond to changes in data. React’s key feature is its “reactive” approach, where components update automatically in response to changes in state or props. This, combined with a virtual DOM that optimizes updates, makes React an efficient and flexible choice for web application development&#8203;:contentReference[oaicite:6]{index=6}.
+
+#### 8. Web Frameworks
+Web frameworks are collections of tools and libraries that simplify the development of complex web applications. Frameworks like React, Vue, and Angular provide structure and pre-built functionalities, enabling developers to build scalable, maintainable applications. Modern web frameworks often support SPAs, reactivity, and modularized code, allowing developers to focus on creating interactive user experiences. Many frameworks also support hybrid file formats, such as JSX, which combines JavaScript and HTML, further streamlining development&#8203;:contentReference[oaicite:7]{index=7}.
+
+#### Example Code
+```javascript
+// Import React, React Router, and hooks
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+// App Component - Main wrapper for routing
+function App() {
+  return (
+    <Router>
+      <nav>
+        <Link to="/">Home</Link> | 
+        <Link to="/profile">Profile</Link> | 
+        <Link to="/settings">Settings</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
+      </Routes>
+    </Router>
+  );
+}
+
+// Home Component - Static page
+function Home() {
+  return <h2>Welcome to the Home Page</h2>;
+}
+
+// Profile Component - Demonstrates reactivity and state management
+function Profile() {
+  const [user, setUser] = useState({ name: "React Learner", age: 20 });
+  const [color, setColor] = useState('#3498db');
+
+  // Example of reactivity: dynamically update user information
+  useEffect(() => {
+    console.log("User profile loaded:", user);
+  }, [user]);
+
+  return (
+    <div style={{ color }}>
+      <h2>Profile</h2>
+      <p>Name: {user.name}</p>
+      <p>Age: {user.age}</p>
+      <button onClick={() => setUser({ ...user, age: user.age + 1 })}>
+        Increase Age
+      </button>
+      <button onClick={() => setColor(color === '#3498db' ? '#e74c3c' : '#3498db')}>
+        Toggle Color
+      </button>
+    </div>
+  );
+}
+
+// Settings Component - Simulates async data loading with hooks
+function Settings() {
+  const [data, setData] = useState(null);
+
+  // Fetch data asynchronously (simulated)
+  useEffect(() => {
+    async function fetchData() {
+      // Simulated fetch request
+      const mockData = { theme: "dark", notifications: true };
+      await new Promise(resolve => setTimeout(resolve, 500)); // Simulated delay
+      setData(mockData);
+    }
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <h2>Settings</h2>
+      {data ? (
+        <div>
+          <p>Theme: {data.theme}</p>
+          <p>Notifications: {data.notifications ? "On" : "Off"}</p>
+        </div>
+      ) : (
+        <p>Loading settings...</p>
+      )}
+    </div>
+  );
+}
+
+export default App;
+```
+
