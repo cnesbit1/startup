@@ -1,0 +1,24 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "*Introducing \"BallotBox Exchange\"—a platform where individual creativity meets community collaboration. BallotBox Exchange empowers users to submit their best ideas, websites, text, and more, while voting on others using various systems like ranked choice, majority rule, and approval voting. Explore how different voting methods influence outcomes and discover which ideas rise to the top based on collective preferences. Whether you're an entrepreneur, a student, or a researcher, BallotBox Exchange provides a dynamic space to experience how the way we vote can shape the future of innovation, while also getting to enjoy that innovation.*",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.5",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  }
+}

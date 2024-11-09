@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BallotBox Exchange</title>
+
+        <link rel="stylesheet" href="startup-css/base.css">
+        <link rel="stylesheet" href="startup-css/layout.css">
+        <link rel="stylesheet" href="startup-css/components.css">
+        <link rel="stylesheet" href="startup-css/responsive.css">
+
+        <!-- Firebase SDK Scripts for Authentication (to be configured later) -->
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+        <script>
+            // Placeholder for Firebase configuration
+            const firebaseConfig = {
+                apiKey: "YOUR_API_KEY",
+                authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+                projectId: "YOUR_PROJECT_ID",
+                storageBucket: "YOUR_PROJECT_ID.appspot.com",
+                messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+                appId: "YOUR_APP_ID"
+            };
+
+            // Placeholder: Initialize Firebase App
+            // const app = firebase.initializeApp(firebaseConfig);
+            // const auth = firebase.getAuth(app);
+
+            // Placeholder for Firebase Authentication logic (Login, Sign Up)
+        </script>
+    </head>
+    
+    <body>
+        <header>
+            <img src="images/voting-icon.webp" alt="Left Logo" class="header-logo left-logo">
+            <h1>BallotBox Exchange</h1>
+            <img src="images/voting-icon.webp" alt="Right Logo" class="header-logo right-logo">
+        </header>
+
+        <main>
+            <section id="ballotbox-exchange">
+                <h2>Welcome to BallotBox Exchange</h2>
+                <div id="elevator-pitch">
+                    <p>Introducing "BallotBox Exchange"— a platform where individual creativity meets community collaboration. BallotBox Exchange empowers users to submit their best ideas, websites, text, and more, while voting on others using various systems like ranked choice, majority rule, and approval voting. Explore how different voting methods influence outcomes and discover which ideas rise to the top based on collective preferences.</p>
+                </div>
+            
+                <div id="auth-container">
+                    <div id="login-form">
+                        <h3>Login</h3>
+                        <div>
+                            <label for="login-username">Username:</label>
+                            <input type="text" id="login-username">
+                        </div>
+                        <div>
+                            <label for="login-password">Password:</label>
+                            <input type="password" id="login-password">
+                        </div>
+                        <a href="roster.html">
+                            <button type="button">Login</button>
+                        </a>
+                    </div>
+            
+                    <div id="sign-in-form">
+                        <h3>Sign Up</h3>
+                        <div>
+                            <label for="signin-username">Username:</label>
+                            <input type="text" id="signin-username">
+                        </div>
+                        <div>
+                            <label for="signin-password">Password:</label>
+                            <input type="password" id="signin-password">
+                        </div>
+                        <div>
+                            <label for="signin-email">Email:</label>
+                            <input type="email" id="signin-email">
+                        </div>
+                        <a href="roster.html">
+                            <button type="button">Sign Up</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: <a href="mailto:connornesbit@gmail.com">connornesbit@gmail.com</a></p>
+                    <p>Phone Number: (480) 798-7427</p>
+                    <p>GitHub:<a href="https://github.com/cnesbit1/startup">Startup Repository</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>BallotBox Exchange is dedicated to empowering communities through transparent voting and collaboration.</p>
+                    <p>&copy; 2024 BallotBox Exchange. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
