@@ -53,4 +53,16 @@ All of these requirements have been completed.
 
 - Application Text Content: Headings and paragraphs are styled with dark blue text `(#203864)`, and links have a distinctive gold color `(#ffd700)`. Strong tags are highlighted in red `(#e63946)` to emphasize important information. The text in the header and footer uses white to contrast against the dark blue background.
 
-- Application Images: A voting icon image has been added to the header twice on each page of the website. These images are positioned in the header and have defined sizes to prevent overflow. 
+- Application Images: A voting icon image has been added to the header twice on each page of the website. These images are positioned in the header and have defined sizes to prevent overflow.
+
+## CSS Deliverable
+
+All of these requirements have been completed.
+
+- Bundled React Using React: 
+
+- Added All React Components: 
+
+- React Router: 
+
+- React Hooks: 
