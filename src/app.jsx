@@ -4,6 +4,7 @@ import { Login } from './pages/login';
 import { User } from './pages/user';
 import { Roster } from './pages/roster';
 import './app.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

@@ -16,7 +16,7 @@ body, html {
     background-color: #f4f4f9;
 }
 
-.body {
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -35,10 +35,27 @@ header {
     height: 80px;
 }
 
+.header, .footer {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
 /* Logo Styling */
 .header-logo {
     height: 50px;
     margin: 0 20px;
+}
+
+.header-logo {
+    width: 50px;
+    height: auto;
+    margin: 0 10px;
+}
+  
+.navbar-nav .nav-link {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .left-logo {
