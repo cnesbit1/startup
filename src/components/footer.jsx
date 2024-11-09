@@ -3,7 +3,7 @@ import React from 'react';
 
 export function Footer() {
   return (
-    <footer className="container-fluid bg-dark text-white py-4">
+    <footer className="footer container-fluid py-4">
       <div className="row justify-content-between">
         <div className="col-md-4 footer-section">
           <h4>Contact Us</h4>

@@ -22,6 +22,33 @@ body {
     min-height: 100vh;
 }
 
+/* Reset margins and padding on html and body */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Ensure full-width for header and footer */
+header, footer, main {
+    width: 100%; /* Full viewport width */
+    box-sizing: border-box;
+}
+
+/* Optional: Fix container-fluid to full width if needed */
+.container-fluid {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 /* ============================ */
 /* 3. Header and Navigation Styling */
 /* ============================ */
@@ -29,10 +56,7 @@ header {
     background-color: #203864;
     color: #ffffff;
     padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
+    width: 100%;
 }
 
 .header, .footer {
@@ -44,7 +68,8 @@ header {
 /* Logo Styling */
 .header-logo {
     height: 50px;
-    margin: 0 20px;
+    width: auto;
+    margin: 0 10px;
 }
 
 .header-logo {
@@ -84,7 +109,7 @@ header nav {
     align-items: center;
 }
 
-header nav a {
+header nav li nav-item {
     color: #ffffff;
     margin: 0 10px;
     text-decoration: none;
@@ -93,7 +118,7 @@ header nav a {
     transition: background-color 0.3s, color 0.3s;
 }
 
-header nav a:hover {
+header nav nav:hover {
     background-color: #ffffff;
     color: #203864;
     border-radius: 5px;
@@ -156,7 +181,7 @@ main {
     border-radius: 5px;
 }
 
-#login-form button, #sign-in-form button {
+#login-form button, #sign-in-form button, #new-submission button {
     background-color: #e63946;
     color: white;
     border: none;
@@ -170,7 +195,7 @@ main {
     text-align: center;
 }
 
-#login-form button:hover, #sign-in-form button:hover {
+#login-form button:hover, #sign-in-form button:hover, #new-submission button:hover{
     background-color: #b2182b;
 }
 

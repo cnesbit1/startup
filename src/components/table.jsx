@@ -1,7 +1,13 @@
-// Table.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-export function Table({ rows }) {
+export function Table() {
+  const [rows, setRows] = useState([]);
+
+  useEffect(() => {
+    const storedSubmissions = JSON.parse(localStorage.getItem('submissions')) || [];
+    setRows(storedSubmissions);
+  }, []);
+
   return (
     <table>
       <thead>
