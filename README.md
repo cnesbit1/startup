@@ -59,10 +59,12 @@ All of these requirements have been completed.
 
 All of these requirements have been completed.
 
-- Bundled React Using React: 
+- Bundled React Using React: The application has been successfully bundled with React. The app.css file is linked to style the application, and Bootstrap is included for responsive layout and styling, ensuring the application is both visually appealing and functional across devices.
 
-- Added All React Components: 
+- Added All React Components: The application includes three main React components for each page: Login, which handles user authentication with login and signup forms; User, which displays user profile information and allows users to submit new ideas; and Roster, which displays a list of submitted ideas along with voting options, enabling users to interact with the submissions. They use minor components such as header, footer, loginform, signupform, rankingsubmissions, table, votingsystemselector, profiledisplay, and newsubmissioninput to modularize the functionality of the website.
 
-- React Router: 
+- React Router: React Router has been integrated to manage navigation within the single-page application (SPA). It defines three routes: the root route (/) renders the Login component, /roster shows the Roster component for voting and viewing submissions, and /user displays the User component for profile viewing and idea submission, ensuring smooth transitions without page reloads.
 
-- React Hooks: 
+- React Hooks: In this application, React Hooks have been integrated to manage state and side effects efficiently. The useState hook is used to handle dynamic data such as the user's username, email, and form inputs, ensuring real-time updates across different components. The useEffect hook is utilized to retrieve and display user data from localStorage when the components load, keeping the UI consistent even after page reloads. Additionally, the useNavigate hook allows for programmatic navigation, redirecting users to different routes (e.g., from login to the roster page) based on their interactions. These hooks work together to create a responsive and interactive experience, simplifying state management and side-effect handling in functional components.
+
+Note: The implementation of the functionality in Signing In and Data Display has been given in local storage to provide a skeleton in which further deliverables will add further functionality. The next deliverable will add permanent data storage which will then be used to refine logging in, signing up, adding new submissions, and ranking submissions.
