@@ -8,7 +8,7 @@ export function NewSubmissionInput() {
     const newSubmission = { text: submission, votes: 0, place: `${currentSubmissions.length + 1}th` };
     localStorage.setItem('submissions', JSON.stringify([...currentSubmissions, newSubmission]));
     setSubmission('');
-    // Trigger re-render if using this component inside Table display
+
   };
 
   return (

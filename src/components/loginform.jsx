@@ -7,10 +7,16 @@ export function LoginForm() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Store login data in localStorage
-    localStorage.setItem('username', username);
-    localStorage.setItem('password', password); // for demonstration only; consider more secure handling for production
-    navigate('/roster');
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    const user = users.find(u => u.username === username && u.password === password);
+
+    if (user) {
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      navigate('/roster');
+    } else {
+      alert('Invalid username or password');
+    }
   };
 
   return (

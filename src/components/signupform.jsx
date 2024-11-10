@@ -8,11 +8,25 @@ export function SignupForm() {
   const navigate = useNavigate();
 
   const handleSignUp = () => {
-    // Save user signup data to localStorage
-    const userData = { username, password, email };
-    localStorage.setItem('user', JSON.stringify(userData));
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    const existingUser = users.find(user => 
+      user.username === username || 
+      user.email === email || 
+      user.password === password
+    );
+    
+    if (existingUser) {
+      alert('Username, email, or password already exists. Please choose a different one.');
+      return;
+    }
 
-    // Redirect to roster page or another page as needed
+    const userData = { username, password, email };
+    users.push(userData);
+
+    localStorage.setItem('users', JSON.stringify(users));
+    localStorage.setItem('currentUser', JSON.stringify(userData));
+
     navigate('/roster');
   };
 

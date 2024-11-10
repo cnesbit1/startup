@@ -10,14 +10,14 @@ export function Header({ title, username }) {
   return (
     <header className="header container-fluid py-3">
       <div className="container-fluid d-flex align-items-center justify-content-between">
-        {/* Left Logo */}
-        <img src="/public/voting-icon.webp" alt="Left Logo" className="header-logo left-logo" />
+
+        <img src="/voting-icon.webp" alt="Left Logo" className="header-logo left-logo" />
         
-        {/* Center Section with Title and Nav */}
+
         <div className="d-flex align-items-center justify-content-center flex-grow-1">
           <h1 className="mb-0 me-4">{title}</h1>
           
-          {/* Navigation Links */}
+
           {!isLoginPage && (
             <nav className="navbar navbar-expand navbar-dark mb-0">
               <ul className="navbar-nav d-flex">
@@ -39,17 +39,17 @@ export function Header({ title, username }) {
           )}
         </div>
 
-        {/* Right Section */}
+
         <div className="d-flex align-items-center">
-          {/* Username Display */}
+
           {!isLoginPage && (
             <div id="username-display" className="info-display text-center me-3">
               <p className="mb-0"><strong>Logged in as:</strong> {username}</p>
             </div>
           )}
           
-          {/* Right Logo */}
-          <img src="/public/voting-icon.webp" alt="Right Logo" className="header-logo right-logo" />
+
+          <img src="/voting-icon.webp" alt="Right Logo" className="header-logo right-logo" />
         </div>
       </div>
     </header>

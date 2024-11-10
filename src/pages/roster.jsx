@@ -7,13 +7,17 @@ import '../app.css';
 export function Roster() {
   const [username, setUsername] = useState('');
 
-  // Load the logged-in user's username from localStorage
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
     if (currentUser) {
       setUsername(currentUser.username);
+    } else {
+      console.log('No currentUser found in localStorage');
     }
   }, []);
+
+  console.log('Current username:', username);
 
   return (
     <div className="container-fluid">
