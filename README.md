@@ -55,13 +55,13 @@ All of these requirements have been completed.
 
 - Application Images: A voting icon image has been added to the header twice on each page of the website. These images are positioned in the header and have defined sizes to prevent overflow.
 
-## CSS Deliverable
+## React Deliverable
 
 All of these requirements have been completed.
 
 - Bundled React Using React: The application has been successfully bundled with React. The app.css file is linked to style the application, and Bootstrap is included for responsive layout and styling, ensuring the application is both visually appealing and functional across devices.
 
-- Added All React Components: The application includes three main React components for each page: Login, which handles user authentication with login and signup forms; User, which displays user profile information and allows users to submit new ideas; and Roster, which displays a list of submitted ideas along with voting options, enabling users to interact with the submissions. They use minor components such as header, footer, loginform, signupform, rankingsubmissions, table, votingsystemselector, profiledisplay, and newsubmissioninput to modularize the functionality of the website.
+- Added All React Components: The application includes three main React components for each page: Login, which handles user authentication with login and signup forms; User, which displays user profile information and allows users to submit new ideas; and Roster, which displays a list of submitted ideas along with voting options, enabling users to interact with the submissions. They use minor components such as Header, Footer, LogInForm, SignUpForm, RankingSubmissions, Table, VotingSystemSelector, ProfileDisplay, and NewSubmissionInput to modularize the functionality of the website.
 
 - React Router: React Router has been integrated to manage navigation within the single-page application (SPA). It defines three routes: the root route (/) renders the Login component, /roster shows the Roster component for voting and viewing submissions, and /user displays the User component for profile viewing and idea submission, ensuring smooth transitions without page reloads.
 
