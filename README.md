@@ -68,3 +68,19 @@ All of these requirements have been completed.
 - React Hooks: In this application, React Hooks have been integrated to manage state and side effects efficiently. The useState hook is used to handle dynamic data such as the user's username, email, and form inputs, ensuring real-time updates across different components. The useEffect hook is utilized to retrieve and display user data from localStorage when the components load, keeping the UI consistent even after page reloads. Additionally, the useNavigate hook allows for programmatic navigation, redirecting users to different routes (e.g., from login to the roster page) based on their interactions. These hooks work together to create a responsive and interactive experience, simplifying state management and side-effect handling in functional components.
 
 Note: The implementation of the functionality in Signing In and Data Display has been given in local storage to provide a skeleton in which further deliverables will add further functionality. The next deliverable will add permanent data storage which will then be used to refine logging in, signing up, adding new submissions, and ranking submissions.
+
+## Service Deliverable
+
+All of these requirements have been completed.
+
+- Create HTTP Service Using Node.js and Express: 
+
+- Frontend Served Up Using Express Static Middleware: 
+
+- Frontend Calls Third Party Service Endpoints: 
+
+- Backend Provides Service Endpoints:
+
+- Frontend Calls Custom Service Endpoints:
+
+Note: This is the skeleton framework for the deliverable.
