@@ -541,3 +541,95 @@ function Settings() {
 export default App;
 ```
 
+## HTTP Startup
+
+#### 1. HTTP
+HTTP, or Hypertext Transfer Protocol, is the method that enables communication between a web client (like a browser) and a server. A client sends an HTTP request, and the server responds with an HTTP response, transferring data across the web. The structure of an HTTP request includes elements such as the verb (like GET or POST), path, parameters, and headers, all of which define the type of data requested and how it’s transmitted.
+
+#### 2. Ports
+Ports serve as dedicated pathways on a server for handling different types of network requests. Port 80 is commonly used for HTTP (unsecure), while port 443 is for HTTPS (secure). Web servers often use these ports to route traffic securely or redirect unsecure requests. Additionally, a server can run various services on other ports (like 3000 or 4000) to efficiently manage and distribute incoming requests to the appropriate services.
+
+#### 3. URL
+A URL, or Uniform Resource Locator, is the unique address that specifies the location of a web resource, such as a webpage or image. A URL includes elements like the scheme (typically HTTP or HTTPS), domain name, optional port, path to the resource, query parameters for filtering data, and an anchor for specific sections. Each part plays a role in routing the browser to the correct resource on the web.
+
+#### 4. Web Services Introduction
+Web services enable web applications to interact with external resources, adding dynamic functionality. For example, a web page might use JavaScript to fetch data from an external source over HTTPS and display it for the user. This ability to call external services allows applications to incorporate real-time data and perform operations that extend beyond the local server environment.
+
+#### 5. Domain Names
+Domain names are human-readable identifiers that link to IP addresses, making it easier for users to access websites without memorizing numeric addresses. A domain is structured with a root domain, top-level domain (like .com or .edu), and optional subdomains. Managed by domain name registries and overseen by ICANN, this structured system allows for scalable, reliable access to resources across the web.
+
+#### 6. Web Servers
+Web servers are computers that host websites and respond to HTTP requests from clients. Historically, web servers were monolithic systems serving static HTML, but they have evolved to support dynamic content and complex application services. Today, many programming languages have libraries that simplify creating and managing web services, allowing servers to serve content dynamically based on user interactions.
+
+#### 7. Internet
+The internet is a vast, interconnected network that enables devices worldwide to communicate. Every device connected to the internet has an IP address, which serves as its unique identifier. Domain names act as user-friendly aliases for IP addresses, simplifying navigation. The internet’s underlying structure of interconnected networks and IP addresses enables web applications to access resources and communicate globally.
+
+#### 8. Fetch
+The Fetch API is the modern method for making HTTP requests in JavaScript. Using promises, Fetch allows for easy data retrieval and handling, enabling applications to fetch and display data from external sources asynchronously. Fetch can be configured for different HTTP methods, such as GET and POST, making it versatile for interacting with RESTful APIs and other web services​.
+
+#### 9. Node Web Service
+With Node.js, developers can create basic web services that listen on specified ports, accept HTTP requests, and send responses. By using Node's built-in HTTP module, it’s possible to set up a simple server that responds with HTML or JSON content. This foundation enables the creation of more complex applications by layering additional functionality on top of the base service​.
+
+#### 10. Express
+Express is a minimalistic Node.js framework that enhances web server capabilities by adding tools for handling routes, parsing JSON, managing HTTP requests and responses, and using middleware. Express simplifies developing robust, scalable web services by allowing developers to easily set up and handle HTTP routes and use reusable functions, making it an ideal choice for building production-level applications​.
+
+#### 11. SOP and CORS
+The Same-Origin Policy (SOP) is a security measure that restricts JavaScript code from making requests to a different domain than the one serving the web page, preventing unauthorized access to sensitive data. Cross-Origin Resource Sharing (CORS) allows servers to selectively permit cross-origin requests by specifying allowable domains in the response headers. This approach secures data while enabling authorized interactions across domains, essential for modern web applications​.
+
+#### Example Code
+
+##### Backend Express
+```javascript
+// server.js
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+// Simple quotes array
+const quotes = [
+  { author: "Albert Einstein", quote: "Life is like riding a bicycle. To keep your balance you must keep moving." },
+  { author: "Isaac Newton", quote: "If I have seen further, it is by standing on the shoulders of giants." },
+  { author: "Marie Curie", quote: "One never notices what has been done; one can only see what remains to be done." },
+];
+
+// Endpoint to get a random quote
+app.get('/api/quote', (req, res) => {
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  res.json(randomQuote);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+```
+
+##### Frontend Fetch
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch Quote Example</title>
+</head>
+<body>
+  <h1>Inspirational Quote</h1>
+  <button id="get-quote">Get Quote</button>
+  <p id="quote-display"></p>
+  <p id="author-display"></p>
+
+  <script>
+    document.getElementById('get-quote').addEventListener('click', () => {
+      fetch('http://localhost:3000/api/quote') // Request to Express server
+        .then(response => response.json())      // Parse JSON from response
+        .then(data => {
+          // Display the quote and author in HTML
+          document.getElementById('quote-display').innerText = `"${data.quote}"`;
+          document.getElementById('author-display').innerText = `— ${data.author}`;
+        })
+        .catch(error => console.error('Error fetching quote:', error));
+    });
+  </script>
+</body>
+</html>
+```
