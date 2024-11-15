@@ -3,12 +3,28 @@ import React, { useState } from 'react';
 export function NewSubmissionInput() {
   const [submission, setSubmission] = useState('');
 
-  const handleNewSubmission = () => {
-    const currentSubmissions = JSON.parse(localStorage.getItem('submissions')) || [];
-    const newSubmission = { text: submission, votes: 0, place: `${currentSubmissions.length + 1}th` };
-    localStorage.setItem('submissions', JSON.stringify([...currentSubmissions, newSubmission]));
-    setSubmission('');
+  const handleNewSubmission = async () => {
+    const token = localStorage.getItem('token');
+    try {
+      const response = await fetch('/api/submissions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token  // Send the token for authentication
+        },
+        body: JSON.stringify({ text: submission, votes: 0 })
+      });
 
+      if (response.ok) {
+        const updatedSubmissions = await response.json();
+        setSubmission('');
+        console.log('Submissions updated:', updatedSubmissions);
+      } else {
+        alert('Failed to submit.');
+      }
+    } catch (error) {
+      console.error('Submission failed:', error);
+    }
   };
 
   return (

@@ -6,16 +6,29 @@ export function LoginForm() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    
-    const user = users.find(u => u.username === username && u.password === password);
+  const handleLogin = async () => {
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })  // Send username and password
+      });
 
-    if (user) {
-      localStorage.setItem('currentUser', JSON.stringify(user));
-      navigate('/roster');
-    } else {
-      alert('Invalid username or password');
+      if (response.ok) {
+        const data = await response.json();
+        const userData = {
+          token: data.token,
+          username: data.username,
+          email: data.email,
+        };
+    
+        localStorage.setItem('currentUser', JSON.stringify(userData)); // Save as JSON
+        navigate('/roster');
+      } else {
+        alert('Invalid username or password');
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
     }
   };
 

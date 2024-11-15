@@ -7,27 +7,34 @@ export function SignupForm() {
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
 
-  const handleSignUp = () => {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    
-    const existingUser = users.find(user => 
-      user.username === username || 
-      user.email === email || 
-      user.password === password
-    );
-    
-    if (existingUser) {
-      alert('Username, email, or password already exists. Please choose a different one.');
-      return;
+  const handleSignUp = async () => {
+    try {
+      const response = await fetch('/api/auth/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password, email })
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Server response:', data);
+        const userData = {
+          token: data.token,
+          username: data.username,
+          email: data.email, // Include the provided email
+        };
+  
+        localStorage.setItem('currentUser', JSON.stringify(userData));
+        navigate('/roster');
+      } else {
+        const errorData = await response.json().catch(() => ({})); // Handle non-JSON responses
+        console.error('Error response from server:', errorData);
+        alert(errorData.msg || 'Sign up failed');
+      }
+    } catch (error) {
+      console.error('Sign up failed:', error);
+      alert('An unexpected error occurred. Please try again.');
     }
-
-    const userData = { username, password, email };
-    users.push(userData);
-
-    localStorage.setItem('users', JSON.stringify(users));
-    localStorage.setItem('currentUser', JSON.stringify(userData));
-
-    navigate('/roster');
   };
 
   return (

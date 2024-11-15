@@ -21,10 +21,9 @@ export function User() {
   }, []);
 
   const validateInput = (field, value) => {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
     const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
   
-    return users.some(user => {
+    return Object.values(users).some((user) => {
       if (field === 'username') {
         return user.username === value && user.username !== currentUser.username;
       } else if (field === 'email') {
@@ -36,35 +35,37 @@ export function User() {
     });
   };
 
-  const handleUserDataChange = (field, value) => {
-    if (validateInput(field, value)) {
-      alert('Username, email, or password already exists. Please choose a different one.');
-      return;
+  const handleUserDataChange = async (field, value) => {
+    try {
+      const token = localStorage.getItem('token'); // Retrieve the user token for authentication
+      const response = await fetch('/api/user/update', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: token, // Send the token in the header
+        },
+        body: JSON.stringify({ field, value }), // Send the updated field and value
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        const updatedUser = data.user;
+  
+        // Update state and localStorage with the new user data
+        if (field === 'username') setUsername(updatedUser.username);
+        if (field === 'email') setEmail(updatedUser.email);
+        if (field === 'password') setPassword(updatedUser.password);
+  
+        localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+        alert('User updated successfully!');
+      } else {
+        const errorData = await response.json();
+        alert(errorData.msg || 'Failed to update user data');
+      }
+    } catch (error) {
+      console.error('Error updating user data:', error);
+      alert('An unexpected error occurred. Please try again.');
     }
-
-    const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
-
-    if (field === 'username') {
-      setUsername(value);
-    } else if (field === 'password') {
-      setPassword(value);
-    } else if (field === 'email') {
-      setEmail(value);
-    }
-
-    const updatedUser = {
-      username: field === 'username' ? value : currentUser.username,
-      password: field === 'password' ? value : currentUser.password,
-      email: field === 'email' ? value : currentUser.email,
-    };
-
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const updatedUsers = users.map(user =>
-      user.username === currentUser.username ? updatedUser : user
-    );
-
-    localStorage.setItem('users', JSON.stringify(updatedUsers));
-    localStorage.setItem('currentUser', JSON.stringify(updatedUser));
   };
 
   const submissions = [
