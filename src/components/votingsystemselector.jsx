@@ -11,7 +11,6 @@ export function VotingSystemSelector({ label, onChange }) {
   };
 
   useEffect(() => {
-    // Load preference from localStorage
     const savedVotingSystem = localStorage.getItem('votingSystem');
     if (savedVotingSystem) setSelectedVotingSystem(savedVotingSystem);
   }, []);

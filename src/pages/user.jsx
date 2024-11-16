@@ -20,58 +20,39 @@ export function User() {
     }
   }, []);
 
-  const validateInput = (field, value) => {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
-  
-    return Object.values(users).some((user) => {
-      if (field === 'username') {
-        return user.username === value && user.username !== currentUser.username;
-      } else if (field === 'email') {
-        return user.email === value && user.username !== currentUser.username;
-      } else if (field === 'password') {
-        return user.password === value && user.username !== currentUser.username;
-      }
-      return false;
-    });
-  };
-
   const handleUserDataChange = async (field, value) => {
     try {
-      const token = localStorage.getItem('token'); // Retrieve the user token for authentication
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      const token = currentUser?.token;
+  
       const response = await fetch('/api/user/update', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: token, // Send the token in the header
+          Authorization: token,
         },
-        body: JSON.stringify({ field, value }), // Send the updated field and value
+        body: JSON.stringify({ field, value }),
       });
   
       if (response.ok) {
         const data = await response.json();
         const updatedUser = data.user;
   
-        // Update state and localStorage with the new user data
         if (field === 'username') setUsername(updatedUser.username);
         if (field === 'email') setEmail(updatedUser.email);
         if (field === 'password') setPassword(updatedUser.password);
   
         localStorage.setItem('currentUser', JSON.stringify(updatedUser));
-        alert('User updated successfully!');
+        alert(`${field} updated successfully!`);
       } else {
         const errorData = await response.json();
-        alert(errorData.msg || 'Failed to update user data');
+        alert(errorData.msg || `Failed to update ${field}.`);
       }
     } catch (error) {
-      console.error('Error updating user data:', error);
-      alert('An unexpected error occurred. Please try again.');
+      console.error(`Error updating ${field}:`, error);
+      alert(`An unexpected error occurred while updating ${field}.`);
     }
   };
-
-  const submissions = [
-    { text: 'Hello World', votes: 12, place: '4th' },
-    { text: 'Her', votes: 4, place: '32nd' },
-  ];
 
   return (
     <div className="container-fluid">
@@ -80,13 +61,12 @@ export function User() {
       <main>
         <section id="user-profile">
           <h2>User Profile Information</h2>
-          
+
           <ProfileDisplay 
             label="Username" 
             value={username} 
             isEditable={true} 
             onChange={(newValue) => handleUserDataChange('username', newValue)} 
-            validateInput={validateInput}
           />
           <ProfileDisplay 
             label="Password" 
@@ -94,7 +74,6 @@ export function User() {
             type="password" 
             isEditable={true} 
             onChange={(newValue) => handleUserDataChange('password', newValue)} 
-            validateInput={validateInput}
           />
           <ProfileDisplay 
             label="Email" 
@@ -102,24 +81,18 @@ export function User() {
             type="email" 
             isEditable={true} 
             onChange={(newValue) => handleUserDataChange('email', newValue)} 
-            validateInput={validateInput}
           />
-
-          {/* <div className="voting-preference-container my-3">
-            <VotingSystemSelector label="Voting System Preference:" />
-          </div> */}
         </section>
-        
+
         <section id="idea-submission">
-          
           <div id="submission-requirements" className="info-display mb-3">
             <h2>Idea Submission:</h2>
             <p>Please ensure that your submission is original, clear, relevant to the objectives of BallotBox Exchange, concise (under 300 words), and free of any personal, confidential, or sensitive information.</p>
           </div>
-          
+
           <div id="submissions" className="info-display mb-3">
-            <p>Submissions</p>
-            <Table rows={submissions} />
+            <p>Your Submissions</p>
+            <Table usernameFilter={username} />
           </div>
 
           <NewSubmissionInput />

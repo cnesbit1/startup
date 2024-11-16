@@ -4,26 +4,34 @@ export function NewSubmissionInput() {
   const [submission, setSubmission] = useState('');
 
   const handleNewSubmission = async () => {
-    const token = localStorage.getItem('token');
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (!currentUser || !currentUser.token) {
+      alert('You must be logged in to submit.');
+      return;
+    }
+
     try {
       const response = await fetch('/api/submissions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': token  // Send the token for authentication
+          'Authorization': currentUser.token,
         },
-        body: JSON.stringify({ text: submission, votes: 0 })
+        body: JSON.stringify({ text: submission, votes: 0 }),
       });
 
       if (response.ok) {
         const updatedSubmissions = await response.json();
-        setSubmission('');
         console.log('Submissions updated:', updatedSubmissions);
+        setSubmission('');
       } else {
-        alert('Failed to submit.');
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Submission error:', errorData);
+        alert(errorData.msg || 'Failed to submit.');
       }
     } catch (error) {
       console.error('Submission failed:', error);
+      alert('An unexpected error occurred.');
     }
   };
 

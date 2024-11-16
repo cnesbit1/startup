@@ -11,7 +11,7 @@ export function LoginForm() {
       const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })  // Send username and password
+        body: JSON.stringify({ username, password })
       });
 
       if (response.ok) {
@@ -20,9 +20,10 @@ export function LoginForm() {
           token: data.token,
           username: data.username,
           email: data.email,
+          password: data.password,
         };
     
-        localStorage.setItem('currentUser', JSON.stringify(userData)); // Save as JSON
+        localStorage.setItem('currentUser', JSON.stringify(userData));
         navigate('/roster');
       } else {
         alert('Invalid username or password');

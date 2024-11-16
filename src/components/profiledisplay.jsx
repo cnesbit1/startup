@@ -1,19 +1,10 @@
 import React, { useState } from 'react';
 
-export function ProfileDisplay({ label, value, type = "text", isEditable = false, onChange, validateInput }) {
+export function ProfileDisplay({ label, value, type = "text", isEditable = false, onChange }) {
   const [inputValue, setInputValue] = useState(value);
 
   const handleChange = (e) => {
-    const newValue = e.target.value;
-
-    const isDuplicate = validateInput(label, newValue);
-    if (isDuplicate) {
-      alert('Username, email, or password already exists. Please choose a different one.');
-      setInputValue(value);
-      return;
-    }
-
-    setInputValue(newValue);
+    setInputValue(e.target.value);
   };
 
   const handleSubmit = () => {

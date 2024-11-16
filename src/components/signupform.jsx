@@ -21,13 +21,14 @@ export function SignupForm() {
         const userData = {
           token: data.token,
           username: data.username,
-          email: data.email, // Include the provided email
+          email: data.email,
+          password: data.password,
         };
   
         localStorage.setItem('currentUser', JSON.stringify(userData));
         navigate('/roster');
       } else {
-        const errorData = await response.json().catch(() => ({})); // Handle non-JSON responses
+        const errorData = await response.json().catch(() => ({}));
         console.error('Error response from server:', errorData);
         alert(errorData.msg || 'Sign up failed');
       }

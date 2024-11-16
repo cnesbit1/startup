@@ -9,13 +9,37 @@ export function Header({ title, username }) {
   const isUserPage = location.pathname === '/user';
   const isRosterPage = location.pathname === '/roster';
 
-  const handleLogOut = () => {
-    // Clear session data
-    localStorage.removeItem('token');
+  const handleLogOut = async () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (!currentUser || !currentUser.token) {
+      alert('You are not logged in.');
+      return;
+    }
+  
+    try {
+      const response = await fetch('/api/auth/logout', {
+        method: 'DELETE',
+        headers: {
+          'Authorization': currentUser.token,
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        console.log('Logged out successfully on the server.');
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Logout error:', errorData);
+        alert(errorData.msg || 'Failed to log out on the server.');
+      }
+    } catch (error) {
+      console.error('Error during logout:', error);
+      alert('An unexpected error occurred during logout.');
+    }
+  
     localStorage.removeItem('currentUser');
-    localStorage.removeItem('currentEmail');
-
-    // Redirect to the login page
+    localStorage.removeItem('votingSystem');
+  
     navigate('/');
   };
 
@@ -32,7 +56,6 @@ export function Header({ title, username }) {
             <nav className="navbar navbar-expand navbar-dark mb-0">
               <ul className="navbar-nav d-flex">
                 <li className="nav-item">
-                  {/* Attach the handleLogOut function */}
                   <button className="nav-link btn btn-link text-decoration-none" onClick={handleLogOut}>
                     Log Out
                   </button>
