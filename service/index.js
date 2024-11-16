@@ -63,10 +63,10 @@ apiRouter.post('/auth/login', (req, res) => {
     currentUsers[token] = user;
 
     res.send({
-      token: newUser.token,
-      username: newUser.username,
-      email: newUser.email,
-      password: newUser.password,
+      token: user.token,
+      username: user.username,
+      email: user.email,
+      password: user.password,
     });
   } else {
     res.status(401).send({ msg: 'Unauthorized' });
