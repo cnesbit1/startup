@@ -14,11 +14,11 @@ let users = {};
 let submissions = [];
 let currentUsers = {};
 
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '..')));
+app.use(express.static('public'));
 
 const apiRouter = express.Router();
 app.use('/api', apiRouter);
