@@ -82,3 +82,18 @@ All of these requirements have been completed.
 - Backend Provides Service Endpoints: The backend exposes a comprehensive set of service endpoints to support authentication, voting submissions, and chart generation. Authentication endpoints allow secure user registration, login, and logout, employing token-based authentication to protect private routes. Voting endpoints allow users to submit new ideas via /api/submissions and toggle votes with /api/submissions/vote. Chart endpoints interact with the Datawrapper API, enabling dynamic creation, data uploads, and publishing of charts for visualization. Utility endpoints, such as /api/clear for resetting data and /api/debug/all for debugging, facilitate development and maintenance. This well-rounded backend ensures seamless interaction between the frontend and backend while maintaining security and scalability.
 
 - Frontend Calls Custom Service Endpoints: The React frontend utilizes fetch calls to interact with backend service endpoints for core functionality. Actions such as submitting new ideas, toggling votes, and updating user profiles are handled via authenticated requests to endpoints like /api/submissions, /api/submissions/vote, and /api/user/update. Authentication workflows include user registration through /api/auth/create, login via /api/auth/login (returning a token for authenticated requests), and logout through /api/auth/logout. All interactions are designed for clarity, with proper error handling and validation to ensure a smooth user experience. The integration between these custom endpoints and the frontend enables efficient data management and dynamic updates within the application.
+
+## Login Deliverable
+
+All of these requirements have been completed.
+
+- Supports New User Registration: 
+
+- Supports Existing User Authentication and Logout: 
+
+- Stores Application Data in MongoDB: 
+
+- Stores and Retrieves Credentials in MongoDB: 
+
+- Restricts Application Functionality based upon Authentication: 
+
