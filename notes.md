@@ -633,3 +633,44 @@ app.listen(PORT, () => {
 </body>
 </html>
 ```
+
+
+## MongoDB Login Logic
+
+#### 1. Connecting and Interfacing with MongoDB Atlas
+MongoDB Atlas serves as a powerful cloud-based database solution that simplifies the integration of database services in web applications. By creating a cluster on Atlas, developers gain access to a managed, scalable environment for storing and retrieving application data. The database connection involves using the mongodb Node.js driver, which facilitates seamless communication between the application and the database. Credentials for the connection are securely managed using a dbConfig.json file, ensuring sensitive information remains protected. Developers can define specific endpoints and perform operations like querying collections, inserting documents, and managing user data from within the web service.
+
+#### Example Code
+
+##### Frontend Fetch
+```javascript
+const { MongoClient } = require('mongodb');
+
+// MongoDB Atlas credentials
+const dbConfig = {
+  userName: 'yourUsername',
+  password: 'yourPassword',
+  hostname: 'yourCluster.mongodb.net',
+};
+
+const url = `mongodb+srv://${dbConfig.userName}:${dbConfig.password}@${dbConfig.hostname}`;
+const client = new MongoClient(url);
+
+async function connectDatabase() {
+  try {
+    await client.connect();
+    console.log('Connected to MongoDB Atlas');
+    const collection = client.db('appData').collection('users');
+
+    // Example operation: Insert a user document
+    await collection.insertOne({ name: 'John Doe', score: 100 });
+    console.log('User added to the database');
+  } catch (error) {
+    console.error('Database connection failed:', error);
+  } finally {
+    client.close();
+  }
+}
+
+connectDatabase();
+```
