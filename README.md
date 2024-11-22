@@ -89,7 +89,7 @@ All of these requirements have been completed.
 
 - Supports New User Registration: The application enables new users to register by providing a unique username, email, and password. During registration, it checks the database to ensure the username and email are not already in use. Once validated, the password is securely hashed using bcrypt, and the user information is stored in MongoDB. This process ensures that only valid, unique user accounts are created.
 
-- Supports Existing User Authentication and Logout: 
+- Supports Existing User Authentication and Logout: Existing users can log in by providing their credentials. The application verifies the provided username and checks the password against the stored hashed password in the database. Upon successful login, the user receives a unique session token for secure access to protected features. Logout functionality invalidates the session token, ensuring the user can safely end their session.
 
 - Stores Application Data in MongoDB: 
 
