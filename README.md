@@ -87,7 +87,7 @@ All of these requirements have been completed.
 
 All of these requirements have been completed.
 
-- Supports New User Registration: 
+- Supports New User Registration: The application enables new users to register by providing a unique username, email, and password. During registration, it checks the database to ensure the username and email are not already in use. Once validated, the password is securely hashed using bcrypt, and the user information is stored in MongoDB. This process ensures that only valid, unique user accounts are created.
 
 - Supports Existing User Authentication and Logout: 
 
