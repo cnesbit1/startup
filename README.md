@@ -93,7 +93,7 @@ All of these requirements have been completed.
 
 - Stores Application Data in MongoDB: The application securely stores all user and submission data in a MongoDB database. This includes user profiles, hashed passwords, authentication tokens, and submissions. MongoDB’s flexible schema allows for efficient storage and retrieval of the structured and semi-structured data required by the application.
 
-- Stores and Retrieves Credentials in MongoDB: 
+- Stores and Retrieves Credentials in MongoDB: User credentials, including usernames, emails, and hashed passwords, are stored securely in MongoDB. During authentication, the application retrieves the stored data to validate user credentials. By using bcrypt for hashing passwords, sensitive information is protected from exposure even if the database is compromised.
 
-- Restricts Application Functionality based upon Authentication: 
+- Restricts Application Functionality based upon Authentication: Access to protected features like updating user profiles, submitting ideas, or voting is restricted to authenticated users. This is enforced through token-based authentication, where a valid session token must be included in API requests. Without proper authentication, users are denied access to these features, ensuring secure operation of the application.
 
