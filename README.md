@@ -91,7 +91,7 @@ All of these requirements have been completed.
 
 - Supports Existing User Authentication and Logout: Existing users can log in by providing their credentials. The application verifies the provided username and checks the password against the stored hashed password in the database. Upon successful login, the user receives a unique session token for secure access to protected features. Logout functionality invalidates the session token, ensuring the user can safely end their session.
 
-- Stores Application Data in MongoDB: 
+- Stores Application Data in MongoDB: The application securely stores all user and submission data in a MongoDB database. This includes user profiles, hashed passwords, authentication tokens, and submissions. MongoDB’s flexible schema allows for efficient storage and retrieval of the structured and semi-structured data required by the application.
 
 - Stores and Retrieves Credentials in MongoDB: 
 
