@@ -87,13 +87,13 @@ All of these requirements have been completed.
 
 All of these requirements have been completed.
 
-- Supports New User Registration: 
+- Supports New User Registration: The application enables new users to register by providing a unique username, email, and password. During registration, it checks the database to ensure the username and email are not already in use. Once validated, the password is securely hashed using bcrypt, and the user information is stored in MongoDB. This process ensures that only valid, unique user accounts are created.
 
-- Supports Existing User Authentication and Logout: 
+- Supports Existing User Authentication and Logout: Existing users can log in by providing their credentials. The application verifies the provided username and checks the password against the stored hashed password in the database. Upon successful login, the user receives a unique session token for secure access to protected features. Logout functionality invalidates the session token, ensuring the user can safely end their session.
 
-- Stores Application Data in MongoDB: 
+- Stores Application Data in MongoDB: The application securely stores all user and submission data in a MongoDB database. This includes user profiles, hashed passwords, authentication tokens, and submissions. MongoDB’s flexible schema allows for efficient storage and retrieval of the structured and semi-structured data required by the application.
 
-- Stores and Retrieves Credentials in MongoDB: 
+- Stores and Retrieves Credentials in MongoDB: User credentials, including usernames, emails, and hashed passwords, are stored securely in MongoDB. During authentication, the application retrieves the stored data to validate user credentials. By using bcrypt for hashing passwords, sensitive information is protected from exposure even if the database is compromised.
 
-- Restricts Application Functionality based upon Authentication: 
+- Restricts Application Functionality based upon Authentication: Access to protected features like updating user profiles, submitting ideas, or voting is restricted to authenticated users. This is enforced through token-based authentication, where a valid session token must be included in API requests. Without proper authentication, users are denied access to these features, ensuring secure operation of the application.
 
