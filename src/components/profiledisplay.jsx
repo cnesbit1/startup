@@ -15,7 +15,12 @@ export function ProfileDisplay({ label, value, type = "text", isEditable = false
 
   return (
     <div className="info-display">
-      <p><strong>{label}:</strong> {value}</p>
+      {label === "Password" ? (
+        <p><strong>{label}:</strong> [NOT DISPLAYED]</p>
+      ) : (
+        <p><strong>{label}:</strong> {value || `[NOT DISPLAYED]`}</p>
+      )}
+
       {isEditable && (
         <div>
           <label htmlFor={label}>{label}:</label>

@@ -15,6 +15,7 @@ const {
   getSubmissions,
   voteOnSubmission,
   clearAllData,
+  updateUser,
 } = require('./database');
 
 const app = express();
@@ -108,7 +109,25 @@ apiRouter.delete('/auth/logout', async (req, res) => {
   }
 });
 
-// Remaining routes (unchanged)
+apiRouter.put('/user/update', authenticate, async (req, res) => {
+  const { field, value } = req.body;
+  const user = req.user;
+
+  if (!field || !value) {
+    console.warn('Missing field or value in request body');
+    return res.status(400).send({ msg: 'Field and value are required for updates.' });
+  }
+
+  try {
+    const updatedUser = await updateUser(user.username, field, value);
+
+    res.send({ msg: 'User updated successfully.', user: updatedUser });
+  } catch (err) {
+    console.error('Error updating user:', err.message);
+    res.status(err.message.includes('already exists') ? 409 : 500).send({ msg: err.message });
+  }
+});
+
 apiRouter.get('/submissions', async (_req, res) => {
   try {
     const submissions = await getSubmissions();
@@ -144,24 +163,30 @@ apiRouter.post('/submissions', authenticate, async (req, res) => {
   }
 });
 
-apiRouter.post('/submissions/vote', authenticate, async (req, res) => {
+apiRouter.post('/submissions/vote', authenticate, async (req, res) => {  
   const { text } = req.body;
+  const voter = req.user?.username;
+
+  if (!voter) {
+    console.warn('Unauthorized access attempt: voter is undefined');
+    return res.status(401).send({ msg: 'Unauthorized. User not authenticated.' });
+  }
 
   try {
-    const updatedSubmission = await voteOnSubmission(text, 1);
-    if (updatedSubmission) {
+    const updatedSubmission = await voteOnSubmission(text, voter);
+    if (updatedSubmission) {      
       const updatedSubmissions = await getSubmissions();
       res.send(updatedSubmissions);
     } else {
+      console.warn(`Submission not found for text: "${text}"`);
       res.status(404).send({ msg: 'Submission not found' });
     }
   } catch (err) {
-    console.error('Error voting on submission:', err);
+    console.error('Error during vote operation:', err);
     res.status(500).send({ msg: 'Failed to vote' });
   }
 });
 
-// Chart Routes
 apiRouter.get('/chart/data', async (_req, res) => {
   try {
     const submissions = await getSubmissions();
@@ -213,7 +238,6 @@ apiRouter.post('/chart/create', async (req, res) => {
   }
 });
 
-// Utility Routes
 apiRouter.delete('/clear', async (_req, res) => {
   try {
     await clearAllData();
@@ -235,12 +259,10 @@ apiRouter.get('/debug/all', async (_req, res) => {
   }
 });
 
-// Serve Static Files
 app.use((_req, res) => {
   res.sendFile('index.html', { root: path.join(__dirname, '..', 'public') });
 });
 
-// Start Server
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
