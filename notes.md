@@ -674,3 +674,58 @@ async function connectDatabase() {
 
 connectDatabase();
 ```
+
+## WebSocket Formatting, Rules, and Purpose
+
+### Summary of WebSockets in JavaScript
+WebSockets are a protocol designed for full-duplex communication between a client and a server, overcoming the limitations of HTTP's client-server architecture. After establishing an initial HTTP connection, the server upgrades it to a WebSocket, enabling bidirectional communication where both client and server can send data independently.
+
+WebSockets are particularly useful for applications like real-time notifications, distributed task processing, and chat applications. Below are some key concepts and examples to illustrate how WebSockets work in JavaScript.
+
+### Establishing a WebSocket Connection
+
+Client-Side: The browser uses the WebSocket API to initiate a connection. You can listen for incoming messages and send data using the onmessage and send methods.
+```javascript
+const socket = new WebSocket('ws://localhost:9900');
+
+// Receive messages
+socket.onmessage = (event) => {
+  console.log('Received:', event.data);
+};
+
+// Send a message
+socket.send('Hello Server');
+```
+
+Server-Side: Using the Node.js ws library, you can set up a WebSocket server to handle incoming connections and messages.
+```javascript
+const { WebSocketServer } = require('ws');
+
+const wss = new WebSocketServer({ port: 9900 });
+
+wss.on('connection', (ws) => {
+  ws.on('message', (message) => {
+    console.log('Received:', message);
+    ws.send(`Echo: ${message}`);
+  });
+
+  ws.send('Welcome to the WebSocket Server!');
+});
+```
+
+### Maintaining Connections
+To prevent WebSocket connections from closing due to inactivity, use ping messages.
+```javascript
+setInterval(() => {
+  wss.clients.forEach((client) => {
+    if (client.isAlive === false) return client.terminate();
+    client.isAlive = false;
+    client.ping();
+  });
+}, 10000);
+
+wss.on('connection', (ws) => {
+  ws.isAlive = true;
+  ws.on('pong', () => (ws.isAlive = true));
+});
+```
