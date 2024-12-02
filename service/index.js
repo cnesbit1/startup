@@ -38,7 +38,7 @@ wss.on('connection', (ws) => {
 
 function broadcast(data) {
   wss.clients.forEach((client) => {
-    if (client.readyState === WebSocket.OPEN) {
+    if (client.readyState === client.OPEN) {
       client.send(JSON.stringify(data));
     }
   });
@@ -289,6 +289,6 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: path.join(__dirname, '..', 'public') });
 });
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+server.listen(port, () => {
+  console.log(`Server is listening on http://localhost:${port}`);
 });
