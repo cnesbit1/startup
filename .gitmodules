@@ -1,3 +1,6 @@
 [submodule "simon-service"]
 	path = simon-service
 	url = https://github.com/webprogramming260/simon-service.git
+[submodule "simon-websocket"]
+	path = simon-websocket
+	url = https://github.com/webprogramming260/simon-websocket.git
