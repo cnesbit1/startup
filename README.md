@@ -101,9 +101,9 @@ All of these requirements have been completed.
 
 All of these requirements have been completed.
 
-- Backend Listens for WebSocket Connection: Hi
+- Backend Listens for WebSocket Connection: The backend initializes a WebSocket server using the `ws` library, listening for connections on the same port as the HTTP server. Upon establishing a WebSocket connection, the server sends a confirmation message to the client, ensuring the connection is functional.
 
-- Frontend Makes WebSocket Connection: Hi
+- Frontend Makes WebSocket Connection: The frontend establishes a WebSocket connection using `new WebSocket('ws://localhost:4000')` in the `Table` component. It listens for `onmessage` events to receive updates from the backend in real time, ensuring that the connection is active and functional.
 
 - Data Sent Over WebSocket Connection: Hi
 
