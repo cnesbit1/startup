@@ -97,3 +97,14 @@ All of these requirements have been completed.
 
 - Restricts Application Functionality based upon Authentication: Access to protected features like updating user profiles, submitting ideas, or voting is restricted to authenticated users. This is enforced through token-based authentication, where a valid session token must be included in API requests. Without proper authentication, users are denied access to these features, ensuring secure operation of the application.
 
+## WebSocket Deliverable
+
+All of these requirements have been completed.
+
+- Backend Listens for WebSocket Connection: Hi
+
+- Frontend Makes WebSocket Connection: Hi
+
+- Data Sent Over WebSocket Connection: Hi
+
+- WebSocket Data Displayed: Hi
