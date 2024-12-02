@@ -5,6 +5,29 @@ const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
 require('dotenv').config();
 
+const { WebSocketServer } = require('ws');
+const http = require('http');
+const server = http.createServer(app);
+const wss = new WebSocketServer({ server });
+
+wss.on('connection', (ws) => {
+  console.log('WebSocket connection established.');
+
+  ws.on('message', (message) => {
+    console.log('Received:', message);
+  });
+
+  ws.send(JSON.stringify({ type: 'info', message: 'Connected to WebSocket server.' }));
+});
+
+function broadcast(data) {
+  wss.clients.forEach((client) => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(JSON.stringify(data));
+    }
+  });
+}
+
 const {
   getUserByEmail,
   getUserByUsername,
