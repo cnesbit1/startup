@@ -105,6 +105,6 @@ All of these requirements have been completed.
 
 - Frontend Makes WebSocket Connection: The frontend establishes a WebSocket connection using `new WebSocket('ws://localhost:4000')` in the `Table` component. It listens for `onmessage` events to receive updates from the backend in real time, ensuring that the connection is active and functional.
 
-- Data Sent Over WebSocket Connection: Hi
+- Data Sent Over WebSocket Connection: The backend uses a `broadcast` function to send `vote_update` messages to all connected WebSocket clients whenever a vote is cast. These messages contain the updated submission data, enabling all clients to stay synchronized.
 
-- WebSocket Data Displayed: Hi
+- WebSocket Data Displayed: The `Table` component processes incoming `vote_update` messages to update the `rows` state, ensuring that the votes are updated in real time. The table is also re-sorted by votes after each update, maintaining a consistent and user-friendly interface.
