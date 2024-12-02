@@ -27,6 +27,21 @@ export function Table({ usernameFilter = null, onVote }) {
     };
 
     fetchSubmissions();
+
+    const socket = new WebSocket('ws://localhost:4000');
+    socket.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+
+      if (data.type === 'vote_update') {
+        setRows((prevRows) =>
+          prevRows.map((row) =>
+            row.text === data.submission.text ? { ...row, votes: data.submission.votes } : row
+          )
+        );
+      }
+    };
+
+    return () => socket.close();
   }, [usernameFilter]);
 
   const handleVote = async (index) => {
@@ -48,21 +63,26 @@ export function Table({ usernameFilter = null, onVote }) {
         body: JSON.stringify({ text: submission.text }),
       });
 
-      if (response.ok) {
-        const updatedSubmissions = await response.json();
+      // if (response.ok) {
+      //   const updatedSubmissions = await response.json();
 
-        let filteredData = updatedSubmissions;
-        if (usernameFilter) {
-          filteredData = updatedSubmissions.filter((sub) => sub.user === usernameFilter);
-        }
+      //   let filteredData = updatedSubmissions;
+      //   if (usernameFilter) {
+      //     filteredData = updatedSubmissions.filter((sub) => sub.user === usernameFilter);
+      //   }
 
-        const sortedData = filteredData.sort((a, b) => b.votes - a.votes);
-        setRows(sortedData);
+      //   const sortedData = filteredData.sort((a, b) => b.votes - a.votes);
+      //   setRows(sortedData);
 
-        if (onVote) {
-          onVote();
-        }
-      } else {
+      //   if (onVote) {
+      //     onVote();
+      //   }
+      // } else {
+      //   const errorData = await response.json().catch(() => ({}));
+      //   console.error('Vote error:', errorData);
+      //   alert(errorData.msg || 'Failed to toggle vote.');
+      // }
+      if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         console.error('Vote error:', errorData);
         alert(errorData.msg || 'Failed to toggle vote.');

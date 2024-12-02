@@ -7,6 +7,22 @@ require('dotenv').config();
 
 const { WebSocketServer } = require('ws');
 const http = require('http');
+
+const {
+  getUserByEmail,
+  getUserByUsername,
+  getUserByToken,
+  createUser,
+  updateUserToken,
+  createSubmission,
+  getSubmissions,
+  voteOnSubmission,
+  clearAllData,
+  updateUser,
+} = require('./database');
+
+const app = express();
+
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 
@@ -28,20 +44,6 @@ function broadcast(data) {
   });
 }
 
-const {
-  getUserByEmail,
-  getUserByUsername,
-  getUserByToken,
-  createUser,
-  updateUserToken,
-  createSubmission,
-  getSubmissions,
-  voteOnSubmission,
-  clearAllData,
-  updateUser,
-} = require('./database');
-
-const app = express();
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 const apiKey = process.env.DATAWRAPPER_API_KEY;
 
@@ -198,8 +200,8 @@ apiRouter.post('/submissions/vote', authenticate, async (req, res) => {
   try {
     const updatedSubmission = await voteOnSubmission(text, voter);
     if (updatedSubmission) {      
-      const updatedSubmissions = await getSubmissions();
-      res.send(updatedSubmissions);
+      broadcast({ type: 'vote_update', submission: updatedSubmission });
+      res.send(updatedSubmission);
     } else {
       console.warn(`Submission not found for text: "${text}"`);
       res.status(404).send({ msg: 'Submission not found' });
@@ -209,6 +211,7 @@ apiRouter.post('/submissions/vote', authenticate, async (req, res) => {
     res.status(500).send({ msg: 'Failed to vote' });
   }
 });
+
 
 apiRouter.get('/chart/data', async (_req, res) => {
   try {
