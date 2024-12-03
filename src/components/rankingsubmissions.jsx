@@ -64,7 +64,7 @@ export function RankingSubmissions() {
       </div>
 
       {/* Voting Table */}
-      <Table onVote={fetchChart} />
+      <Table usernameFilter={null} onVote={fetchChart} />
 
       {/* Chart Section */}
       <div className="chart-container mt-4">
