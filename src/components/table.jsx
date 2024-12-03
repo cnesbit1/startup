@@ -28,7 +28,7 @@ export function Table({ usernameFilter = null, onVote }) {
 
     fetchSubmissions();
 
-    const socket = new WebSocket('ws://localhost:4000');
+    const socket = new WebSocket('wss://startup.ballotboxexchange.com');
     socket.onmessage = (event) => {
       const data = JSON.parse(event.data);
     

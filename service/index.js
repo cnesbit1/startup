@@ -49,6 +49,7 @@ const apiKey = process.env.DATAWRAPPER_API_KEY;
 
 app.use(express.json());
 app.use(express.static('public'));
+app.use('/static', express.static(path.join(__dirname, 'public')));
 
 const apiRouter = express.Router();
 app.use('/api', apiRouter);
@@ -188,7 +189,7 @@ apiRouter.post('/submissions', authenticate, async (req, res) => {
   }
 });
 
-apiRouter.post('/submissions/vote', authenticate, async (req, res) => {  
+apiRouter.post('/submissions/vote', authenticate, async (req, res) => {
   const { text } = req.body;
   const voter = req.user?.username;
 
@@ -199,7 +200,7 @@ apiRouter.post('/submissions/vote', authenticate, async (req, res) => {
 
   try {
     const updatedSubmission = await voteOnSubmission(text, voter);
-    if (updatedSubmission) {      
+    if (updatedSubmission) {
       broadcast({ type: 'vote_update', submission: updatedSubmission });
       res.send(updatedSubmission);
     } else {
@@ -283,6 +284,10 @@ apiRouter.get('/debug/all', async (_req, res) => {
     console.error('Error fetching debug data:', err);
     res.status(500).send({ msg: 'Failed to fetch debug data' });
   }
+});
+
+app.get('*', (_req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.use((_req, res) => {
